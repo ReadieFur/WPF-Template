@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Timers;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
+using System.Windows.Controls;
 
 namespace WPFTemplate
 {
-    public abstract class TemplateWindow : Window
+    //https://stackoverflow.com/questions/39843/how-do-i-create-a-base-page-in-wpf
+    public class Window : System.Windows.Window
     {
         protected Rect _restoreBounds = new Rect(0, 0, 800, 450);
         protected bool _useWinAeroTimer = true;
         protected Timer winAeroTimer = new();
 
-        public abstract TemplateWindowControl templateWindowControl { get; }
-
         public IntPtr handle { get; private init; }
+        public Border border = new();
         public Rect restoreBounds
         {
             get => base.RestoreBounds;
@@ -119,7 +116,7 @@ namespace WPFTemplate
         [Obsolete("Use 'restoreBounds' instead", true)]
         new public Rect RestoreBounds => base.RestoreBounds;
 
-        public TemplateWindow()
+        public Window()
         {
             handle = new WindowInteropHelper(this).Handle;
 
@@ -133,7 +130,7 @@ namespace WPFTemplate
         {
             Helpers.InvokeDispatcher(() =>
             {
-                templateWindowControl.windowBorder.Visibility = Visibility.Visible;
+                //templateWindowControl.windowBorder.Visibility = Visibility.Visible;
                 //DataContext = GetNewDataContext();
             });
 
@@ -163,13 +160,13 @@ namespace WPFTemplate
                     Height = workingArea.Value.Height;
 
                     //templateWindowControl.resizeButton.Content = "\uE923";
-                    templateWindowControl.windowBorder.Visibility = Visibility.Hidden;
+                    //templateWindowControl.windowBorder.Visibility = Visibility.Hidden;
                 }
                 else if (Width != workingArea.Value.Width || Height != workingArea.Value.Height)
                 {
                     //Can resize, set to windowed.
                     //templateWindowControl.resizeButton.Content = "\uE922";
-                    templateWindowControl.windowBorder.Visibility = Visibility.Visible;
+                    //templateWindowControl.windowBorder.Visibility = Visibility.Visible;
                 }
             }
             else
@@ -183,7 +180,7 @@ namespace WPFTemplate
                     Width = restoreBounds.Width;
                     Height = restoreBounds.Height;
                     //templateWindowControl.resizeButton.Content = "\uE923";
-                    templateWindowControl.windowBorder.Visibility = Visibility.Visible;
+                    //templateWindowControl.windowBorder.Visibility = Visibility.Visible;
                 }
             }
         }

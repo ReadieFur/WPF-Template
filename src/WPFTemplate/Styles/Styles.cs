@@ -15,7 +15,7 @@ namespace WPFTemplate.Styles
         private static Brush _lightThemeBackground = "#ffffff".ToBrush();
         private static Brush _lightThemeBackgroundAlt = "#e1e1e1".ToBrush();
         private static Brush _lightThemeForeground = "#000000".ToBrush();
-        private static Brush _accent = "#6400ff".ToBrush();
+        private static Brush _accent = "#00adef".ToBrush();
         private static bool _darkTheme = true;
         private static bool _useSystemTheme = true;
 

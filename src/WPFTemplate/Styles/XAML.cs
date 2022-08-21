@@ -1,28 +1,32 @@
-﻿namespace WPFTemplate.Styles
+﻿using System.Windows;
+
+namespace WPFTemplate.Styles
 {
-    public class XAML
+    public class XAML : DependencyObject
     {
-        public string backgroundColour { get; set; } = Styles.background.ToString();
-        public string hoverBackgroundColour { get; set; } = Styles.backgroundAlt.ToString();
-        public string clickBackgroundColour { get; set; } = Styles.backgroundAlt.ToString();
-        public string disabledBackgroundColour { get; set; } = "#FFF4F4F4";
+        public static readonly DependencyProperty foregroundDP = Helpers.RegisterDependencyProperty<XAML, string>(nameof(foreground), Styles.foreground.ToString());
+        public string foreground { get => (string)GetValue(foregroundDP); set => SetValue(foregroundDP, value); }
 
-        public string foregroundColour { get; set; } = Styles.foreground.ToString();
-        public string disabledForegroundColour { get; set; } = "#FF838383";
+        public static readonly DependencyProperty backgroundDP = Helpers.RegisterDependencyProperty<XAML, string>(nameof(background), Styles.background.ToString());
+        public string background { get => (string)GetValue(backgroundDP); set => SetValue(backgroundDP, value); }
 
-        public string hoverColour { get; set; } = Styles.backgroundAlt.ToString();
+        public static readonly DependencyProperty backgroundAltDP = Helpers.RegisterDependencyProperty<XAML, string>(nameof(backgroundAlt), Styles.backgroundAlt.ToString());
+        public string backgroundAlt { get => (string)GetValue(backgroundAltDP); set => SetValue(backgroundAltDP, value); }
 
-        public string borderColour { get; set; } = Styles.foreground.ToString();
-        public string hoverBorderColour { get; set; } = Styles.foreground.ToString();
-        public string clickBorderColour { get; set; } = Styles.foreground.ToString();
-        public string disabledBorderColour { get; set; } = "#FFF4F4F4";
-
-        public string accentColour { get; set; } = Styles.accent.ToString();
+        public static readonly DependencyProperty accentDP = Helpers.RegisterDependencyProperty<XAML, string>(nameof(accent), Styles.accent.ToString());
+        public string accent { get => (string)GetValue(accentDP); set => SetValue(accentDP, value); }
 
         public XAML()
         {
-            //This update here dosen't seem to work so I will do it externally.
-            /*Styles.onChange += () => Helpers.InvokeDispatcher(() => {...});*/
+            Styles.onChange += () => Helpers.InvokeDispatcher(Styles_onChange);
+        }
+
+        protected virtual void Styles_onChange()
+        {
+            foreground = Styles.foreground.ToString();
+            background = Styles.background.ToString();
+            backgroundAlt = Styles.backgroundAlt.ToString();
+            accent = Styles.accent.ToString();
         }
     }
 }

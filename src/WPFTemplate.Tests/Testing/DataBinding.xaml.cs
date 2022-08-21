@@ -11,20 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WPFTemplate;
 
 namespace WPFTemplate.Tests
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DataBinding.xaml
     /// </summary>
-    public partial class MainWindow : TemplateWindow
+    public partial class DataBinding : System.Windows.Window
     {
-        public override TemplateWindowControl templateWindowControl => templateWindowXAML;
+        public MyString stringobj { get; set; }
 
-        public MainWindow()
+        public DataBinding()
         {
             InitializeComponent();
+
+            stringobj = new MyString { Value = "#FFFF0000" };
+
+            this.DataContext = stringobj;
         }
     }
 }

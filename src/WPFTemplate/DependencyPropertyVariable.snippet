@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Dependency Property Variable</Title>
+            <Shortcut>dprop</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[public static readonly DependencyProperty $PropertyName$DP = Helpers.RegisterDependencyProperty<$ContainingType$, $Type$>(nameof($PropertyName$), $DefaultValue$);
+                public $Type$ $PropertyName$ { get => ($Type$)GetValue($PropertyName$DP); set => SetValue($PropertyName$DP, value); }]]>
+            </Code>
+        <Declarations>
+          <Literal>
+            <ID>PropertyName</ID>
+            <ToolTip>The variable name for this property.</ToolTip>
+            <Default>valueProperty</Default>
+          </Literal>
+          <Literal>
+            <ID>ContainingType</ID>
+            <ToolTip>The containg type of this variable.</ToolTip>
+            <Default>object</Default>
+          </Literal>
+          <Literal>
+            <ID>Type</ID>
+            <ToolTip>The type of the value to be stored.</ToolTip>
+            <Default>object</Default>
+          </Literal>
+          <Literal>
+            <ID>DefaultValue</ID>
+            <ToolTip>The default value for this variable.</ToolTip>
+            <Default>null</Default>
+          </Literal>
+        </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
