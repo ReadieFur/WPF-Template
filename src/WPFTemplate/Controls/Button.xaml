@@ -33,19 +33,16 @@
                             <Setter Property="Foreground" Value="{Binding HoverForeground}"/>
                             <Setter Property="Background" TargetName="border" Value="{Binding HoverBackground}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{Binding HoverBorderBrush}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Foreground" Value="{Binding PressedForeground}"/>
                             <Setter Property="Background" TargetName="border" Value="{Binding PressedBackground}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{Binding PressedBorderBrush}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{Binding DisabledForeground}"/>
                             <Setter Property="Background" TargetName="border" Value="{Binding DisabledBackground}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{Binding DisabledBorderBrush}"/>
-                            <Setter Property="Cursor" Value="Arrow"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
