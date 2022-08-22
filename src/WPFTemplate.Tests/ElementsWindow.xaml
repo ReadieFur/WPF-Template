@@ -18,7 +18,7 @@
     </templateControls:WindowBase.DataContext>
 
     <StackPanel Width="250" Margin="10">
-        <!--<wpfTemplate:Button Content="Button" Height="50"
+        <templateControls:Button Content="Button" Height="50"
             Background="{Binding backgroundAlt, ElementName=Styles}"
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
@@ -28,52 +28,5 @@
             PressedBackground="{Binding accent, ElementName=Styles}"
             PressedBorderBrush="{Binding accent, ElementName=Styles}"
             PressedForeground="{Binding foreground, ElementName=Styles}"/>
-        <wpfTemplate:TextBox Height="50" Text="TextBox"
-            Background="{Binding backgroundAlt, ElementName=Styles}"
-            BorderBrush="{Binding background, ElementName=Styles}"
-            Foreground="{Binding foreground, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
-            FocusBorderBrush="{Binding accent, ElementName=Styles}"
-            SelectionBrush="{Binding accent, ElementName=Styles}"
-            CaretBrush="{Binding foreground, ElementName=Styles}"/>
-        <wpfTemplate:Slider TickPlacement="Both" Value="5"
-            Background="{Binding backgroundAlt, ElementName=Styles}"
-            BorderBrush="{Binding accent, ElementName=Styles}"
-            Foreground="{Binding foreground, ElementName=Styles}"
-            HoverBackground="{Binding foreground, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
-            PressedBackground="{Binding accent, ElementName=Styles}"
-            PressedBorderBrush="{Binding accent, ElementName=Styles}"
-            TrackBackground="{Binding backgroundAlt, ElementName=Styles}"
-            TrackBorderBrush="{Binding accent, ElementName=Styles}"/>
-        <wpfTemplate:RadioButton Content="RadioButton"
-            Background="{Binding backgroundAlt, ElementName=Styles}"
-            BorderBrush="{Binding accent, ElementName=Styles}"
-            Foreground="{Binding foreground, ElementName=Styles}"
-            Glyph="{Binding accent, ElementName=Styles}"
-            HoverBackground="{Binding backgroundAlt, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
-            HoverGlyph="{Binding accent, ElementName=Styles}"
-            PressedBackground="{Binding accent, ElementName=Styles}"
-            PressedGlyph="{Binding accent, ElementName=Styles}"/>
-        <wpfTemplate:CheckBox Content="CheckBox"
-            Background="{Binding backgroundAlt, ElementName=Styles}"
-            BorderBrush="{Binding accent, ElementName=Styles}"
-            Foreground="{Binding foreground, ElementName=Styles}"
-            Glyph="{Binding accent, ElementName=Styles}"
-            HoverBackground="{Binding backgroundAlt, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
-            HoverGlyph="{Binding accent, ElementName=Styles}"
-            PressedBackground="{Binding accent, ElementName=Styles}"
-            PressedGlyph="{Binding accent, ElementName=Styles}"/>-->
-        <!--<wpfTemplate:ListView x:Name="egLV" HorizontalAlignment="Left" Height="81.08" Margin="0,105.92,0,0" VerticalAlignment="Top" Width="240">
-            <wpfTemplate:ListView.View>
-                <GridView>
-                    <wpfTemplate:GridViewColumn Header="List1"/>
-                    <wpfTemplate:GridViewColumn Header="List2"/>
-                </GridView>
-            </wpfTemplate:ListView.View>
-            <wpfTemplate:ListViewItem Content="Item1"/>
-        </wpfTemplate:ListView>-->
     </StackPanel>
 </templateControls:WindowBase>

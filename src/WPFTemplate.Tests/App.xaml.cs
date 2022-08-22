@@ -18,8 +18,8 @@ namespace WPFTemplate.Tests
             #endregion
 #endif
 
-            //new ElementsWindow().ShowDialog();
-            new MainWindow().ShowDialog();
+            new ElementsWindow().ShowDialog();
+            //new MainWindow().ShowDialog();
         }
     }
 }
