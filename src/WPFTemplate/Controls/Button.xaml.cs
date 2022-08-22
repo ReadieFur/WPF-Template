@@ -49,7 +49,7 @@ namespace WPFTemplate.Controls
         new public Style Style { get => base.Style; set => base.Style = value; }
 
         [Obsolete("This property is not changeable.", true)]
-        new public Button DataContext { get => (Button)base.DataContext; set => base.DataContext = value; }
+        new public object DataContext { get => base.DataContext; set => base.DataContext = value; }
         #endregion
         
         public Button()
