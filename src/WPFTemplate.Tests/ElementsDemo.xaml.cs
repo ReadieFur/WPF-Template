@@ -3,9 +3,9 @@ using WPFTemplate.Controls;
 
 namespace WPFTemplate.Tests
 {
-    public partial class ElementsWindow : WindowBase
+    public partial class ElementsDemo : WindowBase
     {
-        public ElementsWindow()
+        public ElementsDemo()
         {
             InitializeComponent();
         }

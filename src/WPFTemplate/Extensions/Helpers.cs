@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace WPFTemplate.Extensions
@@ -17,5 +20,16 @@ namespace WPFTemplate.Extensions
         }
 
         public static SolidColorBrush ToBrush(this Color self) => new SolidColorBrush(self);
+
+        /// <summary>
+        /// Shows the window and returns a task that completes when the window is closed.
+        /// </summary>
+        public static async Task ShowAsync(this Window self)
+        {
+            ManualResetEventSlim manualResetEvent = new(false);
+            self.Show();
+            self.Closed += (_, _) => manualResetEvent.Set();
+            await Task.Run(() => manualResetEvent.Wait());
+        }
     }
 }

@@ -8,7 +8,7 @@
     xmlns:local="clr-namespace:WPFTemplate.Tests"
     xmlns:templateControls="clr-namespace:WPFTemplate.Controls;assembly=WPFTemplate"
     xmlns:templateStyles="clr-namespace:WPFTemplate.Styles;assembly=WPFTemplate"
-    x:Class="WPFTemplate.Tests.ElementsWindow"
+    x:Class="WPFTemplate.Tests.ElementsDemo"
 
     Title="Elements Preview" SizeToContent="WidthAndHeight" ResizeMode="NoResize"
     Background="{Binding background}">

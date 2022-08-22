@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:WPFTemplate.Tests"
         xmlns:templateControls="clr-namespace:WPFTemplate.Controls;assembly=WPFTemplate"
         xmlns:styles="clr-namespace:WPFTemplate.Styles;assembly=WPFTemplate"
-        x:Class="WPFTemplate.Tests.MainWindow"
+        x:Class="WPFTemplate.Tests.WindowChromeDemo"
     
         d:DesignHeight="450" d:DesignWidth="800"
         Title="MainWindow" Height="450" Width="800">

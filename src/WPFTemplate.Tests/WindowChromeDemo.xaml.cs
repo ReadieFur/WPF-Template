@@ -5,9 +5,9 @@ namespace WPFTemplate.Tests
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : WindowChrome
+    public partial class WindowChromeDemo : WindowChrome
     {
-        public MainWindow()
+        public WindowChromeDemo()
         {
             InitializeComponent();
         }
