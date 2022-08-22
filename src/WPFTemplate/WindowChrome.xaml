@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFTemplate">
+    <ControlTemplate x:Key="WindowChrome" TargetType="{x:Type local:WindowChrome}">
+        <Grid>
+            <ContentPresenter Content="{TemplateBinding Content}"
+                        Margin="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowNonClientFrameThicknessTopOnly}"/>
+            <Grid x:Name="headerBar" Background="{Binding background}">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type StackPanel}">
+                        <Setter Property="Orientation" Value="Horizontal"/>
+                        <Setter Property="VerticalAlignment" Value="Top"/>
+                        <Setter Property="Margin" Value="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowResizeBorderThicknessLargerSides}"/>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel x:Name="headerLeft" HorizontalAlignment="Left">
+                    <Image VerticalAlignment="Center"
+                                    Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
+                                    Width="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=SmallIconWidth}"
+                                    Height="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=SmallIconHeight}"/>
+                    <Label VerticalAlignment="Center" Foreground="{Binding foreground}"
+                                    Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
+                </StackPanel>
+                <StackPanel x:Name="headerRight" HorizontalAlignment="Right">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type local:Button}">
+                            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="{Binding foreground}"/>
+                            <Setter Property="Margin" Value="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=FocusBorderThicknessSides}"/>
+                            <Setter Property="FontSize" Value="{Binding Source={x:Static local:SystemFontsExt.instance}, Path=CaptionFontSize}"/>
+                            <Setter Property="Width" Value="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowCaptionButtonWidthLarger}"/>
+                            <Setter Property="Height" Value="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowNonClientFrameThickness.Top}"/>
+                            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <local:Button x:Name="minimiseButton" Content="&#xE921;"/>
+                    <local:Button x:Name="resizeButton" Content="&#xE922;"/>
+                    <local:Button x:Name="closeButton" Content="&#xE8BB;"/>
+                </StackPanel>
+            </Grid>
+            <Border BorderBrush="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowGlassBrush}"
+                            BorderThickness="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=BorderWidthLarger}"
+                            CornerRadius="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowCornerRadius}"/>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>
