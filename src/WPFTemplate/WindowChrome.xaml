@@ -23,7 +23,7 @@
                 </StackPanel>
                 <StackPanel x:Name="headerRight" HorizontalAlignment="Right">
                     <StackPanel.Resources>
-                        <Style TargetType="{x:Type local:Button}">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -35,9 +35,9 @@
                             <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
                         </Style>
                     </StackPanel.Resources>
-                    <local:Button x:Name="minimiseButton" Content="&#xE921;"/>
-                    <local:Button x:Name="resizeButton" Content="&#xE922;"/>
-                    <local:Button x:Name="closeButton" Content="&#xE8BB;"/>
+                    <Button x:Name="minimiseButton" Content="&#xE921;"/>
+                    <Button x:Name="resizeButton" Content="&#xE922;"/>
+                    <Button x:Name="closeButton" Content="&#xE8BB;"/>
                 </StackPanel>
             </Grid>
             <Border BorderBrush="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowGlassBrush}"
