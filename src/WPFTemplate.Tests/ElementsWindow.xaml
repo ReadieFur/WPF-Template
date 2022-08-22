@@ -13,12 +13,17 @@
     Title="Elements Preview" SizeToContent="WidthAndHeight" ResizeMode="NoResize"
     Background="{Binding background}">
 
+    <templateControls:WindowBase.Resources>
+        <Thickness x:Key="ItemMargin" Bottom="5"/>
+    </templateControls:WindowBase.Resources>
+    
     <templateControls:WindowBase.DataContext>
         <templateStyles:BindableStyles x:Name="Styles"/>
     </templateControls:WindowBase.DataContext>
 
-    <StackPanel x:Name="stackPanel" Width="250" Margin="10">
-        <templateControls:Button Content="Button" Height="50"
+    <StackPanel x:Name="stackPanel" Width="250" Margin="10,10,10,5">
+        <templateControls:Button Margin="{StaticResource ItemMargin}"
+            Content="Button" Height="50"
             Background="{Binding backgroundAlt, ElementName=Styles}"
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
@@ -28,7 +33,8 @@
             PressedBackground="{Binding accent, ElementName=Styles}"
             PressedBorderBrush="{Binding accent, ElementName=Styles}"
             PressedForeground="{Binding foreground, ElementName=Styles}"/>
-        <templateControls:TextBox Height="50" Text="TextBox"
+        <templateControls:TextBox Margin="{StaticResource ItemMargin}"
+            Height="50" Text="TextBox"
             Background="{Binding backgroundAlt, ElementName=Styles}"
             BorderBrush="{Binding background, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
@@ -36,7 +42,8 @@
             FocusBorderBrush="{Binding accent, ElementName=Styles}"
             SelectionBrush="{Binding accent, ElementName=Styles}"
             CaretBrush="{Binding foreground, ElementName=Styles}"/>
-        <templateControls:Slider TickPlacement="Both" Value="5"
+        <templateControls:Slider Margin="{StaticResource ItemMargin}"
+            TickPlacement="Both" Value="5"
             Background="{Binding background, ElementName=Styles}"
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
@@ -46,7 +53,8 @@
             PressedBorderBrush="{Binding accent, ElementName=Styles}"
             TrackBackground="{Binding backgroundAlt, ElementName=Styles}"
             TrackBorderBrush="{Binding accent, ElementName=Styles}"/>
-        <templateControls:RadioButton Content="RadioButton"
+        <templateControls:RadioButton Margin="{StaticResource ItemMargin}"
+            Content="RadioButton"
             Background="{Binding backgroundAlt, ElementName=Styles}"
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
@@ -56,7 +64,8 @@
             HoverGlyph="{Binding accent, ElementName=Styles}"
             PressedBackground="{Binding accent, ElementName=Styles}"
             PressedGlyph="{Binding accent, ElementName=Styles}"/>
-        <templateControls:CheckBox Content="CheckBox"
+        <templateControls:CheckBox Margin="{StaticResource ItemMargin}"
+            Content="CheckBox"
             Background="{Binding backgroundAlt, ElementName=Styles}"
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"

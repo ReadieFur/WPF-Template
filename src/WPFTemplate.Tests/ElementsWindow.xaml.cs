@@ -8,8 +8,6 @@ namespace WPFTemplate.Tests
         public ElementsWindow()
         {
             InitializeComponent();
-            foreach (FrameworkElement child in stackPanel.Children)
-                child.Margin = new Thickness(0, 0, 0, 5);
         }
     }
 }
