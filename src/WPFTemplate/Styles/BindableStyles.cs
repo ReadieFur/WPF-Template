@@ -6,14 +6,14 @@ namespace WPFTemplate.Styles
 {
     public class BindableStyles : DependencyObject
     {
-        public static readonly DependencyProperty foregroundDP = DependencyExt.RegisterDependencyProperty<BindableStyles, Brush>(nameof(foreground), Styles.foreground);
-        public Brush foreground { get => (Brush)GetValue(foregroundDP); set => SetValue(foregroundDP, value); }
+        public static readonly DependencyProperty foregroundDP = DependencyExt.RegisterDependencyProperty<BindableStyles, SolidColorBrush>(nameof(foreground), Styles.foreground);
+        public SolidColorBrush foreground { get => (SolidColorBrush)GetValue(foregroundDP); set => SetValue(foregroundDP, value); }
 
-        public static readonly DependencyProperty backgroundDP = DependencyExt.RegisterDependencyProperty<BindableStyles, Brush>(nameof(background), Styles.background);
-        public Brush background { get => (Brush)GetValue(backgroundDP); set => SetValue(backgroundDP, value); }
+        public static readonly DependencyProperty backgroundDP = DependencyExt.RegisterDependencyProperty<BindableStyles, SolidColorBrush>(nameof(background), Styles.background);
+        public SolidColorBrush background { get => (SolidColorBrush)GetValue(backgroundDP); set => SetValue(backgroundDP, value); }
 
-        public static readonly DependencyProperty backgroundAltDP = DependencyExt.RegisterDependencyProperty<BindableStyles, Brush>(nameof(backgroundAlt), Styles.backgroundAlt);
-        public Brush backgroundAlt { get => (Brush)GetValue(backgroundAltDP); set => SetValue(backgroundAltDP, value); }
+        public static readonly DependencyProperty backgroundAltDP = DependencyExt.RegisterDependencyProperty<BindableStyles, SolidColorBrush>(nameof(backgroundAlt), Styles.backgroundAlt);
+        public SolidColorBrush backgroundAlt { get => (SolidColorBrush)GetValue(backgroundAltDP); set => SetValue(backgroundAltDP, value); }
 
         public static readonly DependencyProperty accentDP = DependencyExt.RegisterDependencyProperty<BindableStyles, Brush>(nameof(accent), Styles.accent);
         public Brush accent { get => (Brush)GetValue(accentDP); set => SetValue(accentDP, value); }

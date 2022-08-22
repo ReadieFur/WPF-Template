@@ -10,17 +10,17 @@ namespace WPFTemplate.Styles
     public static class Styles
     {
         private static Timer updateTimer = new Timer();
-        private static Brush _darkThemeBackground = "#0d1117".ToBrush();
-        private static Brush _darkThemeBackgroundAlt = "#161b22".ToBrush();
-        private static Brush _darkThemeForeground = "#ffffff".ToBrush();
-        private static Brush _lightThemeBackground = "#ffffff".ToBrush();
-        private static Brush _lightThemeBackgroundAlt = "#e1e1e1".ToBrush();
-        private static Brush _lightThemeForeground = "#000000".ToBrush();
+        private static SolidColorBrush _darkThemeBackground = "#0d1117".ToBrush();
+        private static SolidColorBrush _darkThemeBackgroundAlt = "#161b22".ToBrush();
+        private static SolidColorBrush _darkThemeForeground = "#ffffff".ToBrush();
+        private static SolidColorBrush _lightThemeBackground = "#ffffff".ToBrush();
+        private static SolidColorBrush _lightThemeBackgroundAlt = "#e1e1e1".ToBrush();
+        private static SolidColorBrush _lightThemeForeground = "#000000".ToBrush();
         private static Brush _accent = "#00adef".ToBrush();
         private static bool _darkTheme = true;
         private static bool _useSystemTheme = true;
 
-        public static Brush darkThemeBackground
+        public static SolidColorBrush darkThemeBackground
         {
             get => _darkThemeBackground;
             set
@@ -30,7 +30,7 @@ namespace WPFTemplate.Styles
                 UpdateThemes();
             }
         }
-        public static Brush darkThemeBackgroundAlt
+        public static SolidColorBrush darkThemeBackgroundAlt
         {
             get => _darkThemeBackgroundAlt;
             set
@@ -40,7 +40,7 @@ namespace WPFTemplate.Styles
                 UpdateThemes();
             }
         }
-        public static Brush darkThemeForeground
+        public static SolidColorBrush darkThemeForeground
         {
             get => _darkThemeForeground;
             set
@@ -50,7 +50,7 @@ namespace WPFTemplate.Styles
                 UpdateThemes();
             }
         }
-        public static Brush lightThemeBackground
+        public static SolidColorBrush lightThemeBackground
         {
             get => _lightThemeBackground;
             set
@@ -60,7 +60,7 @@ namespace WPFTemplate.Styles
                 UpdateThemes();
             }
         }
-        public static Brush lightThemeBackgroundAlt
+        public static SolidColorBrush lightThemeBackgroundAlt
         {
             get => _lightThemeBackgroundAlt;
             set
@@ -70,7 +70,7 @@ namespace WPFTemplate.Styles
                 UpdateThemes();
             }
         }
-        public static Brush lightThemeForeground
+        public static SolidColorBrush lightThemeForeground
         {
             get => _lightThemeForeground;
             set
@@ -81,9 +81,9 @@ namespace WPFTemplate.Styles
             }
         }
 
-        public static Brush background { get; private set; } = darkThemeBackground;
-        public static Brush backgroundAlt { get; private set; } = darkThemeBackgroundAlt;
-        public static Brush foreground { get; private set; } = darkThemeBackgroundAlt;
+        public static SolidColorBrush background { get; private set; } = darkThemeBackground;
+        public static SolidColorBrush backgroundAlt { get; private set; } = darkThemeBackgroundAlt;
+        public static SolidColorBrush foreground { get; private set; } = darkThemeBackgroundAlt;
         /// <summary>
         /// Only settable when 'useSystemTheme' is 'false'.
         /// </summary>
@@ -150,8 +150,10 @@ namespace WPFTemplate.Styles
                 try
                 {
                     //Check if the current user theme is set to dark mode.
+#pragma warning disable CA1416 // Validate platform compatibility
                     bool appsUseLightTheme = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize")?
                         .GetValue("AppsUseLightTheme")?.ToString() == "1";
+#pragma warning restore CA1416 // Validate platform compatibility
 
                     //Check if apps should use light theme and the current application is using dark mode.
                     changeDetected |= appsUseLightTheme && background != lightThemeBackground;
