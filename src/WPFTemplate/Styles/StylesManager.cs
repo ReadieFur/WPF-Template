@@ -144,7 +144,7 @@ namespace WPFTemplate.Styles
                 if (accent != SystemParameters.WindowGlassBrush)
                 {
                     _accent = SystemParameters.WindowGlassBrush;
-                    changeDetected = true;
+                    changeDetected |= true;
                 }
 
                 try
@@ -171,7 +171,7 @@ namespace WPFTemplate.Styles
                         foreground = darkThemeForeground;
                     }
                 }
-                catch { }
+                catch {}
             }
             else changeDetected = true;
 

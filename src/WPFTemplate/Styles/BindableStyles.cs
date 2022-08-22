@@ -20,15 +20,18 @@ namespace WPFTemplate.Styles
 
         public BindableStyles()
         {
-            Styles.onChange += () => DispatcherExt.InvokeDispatcher(Styles_onChange);
+            Styles.onChange += Styles_onChange;
         }
 
         protected virtual void Styles_onChange()
         {
-            foreground = Styles.foreground;
-            background = Styles.background;
-            backgroundAlt = Styles.backgroundAlt;
-            accent = Styles.accent;
+            DispatcherExt.InvokeDispatcher(() =>
+            {
+                foreground = Styles.foreground;
+                background = Styles.background;
+                backgroundAlt = Styles.backgroundAlt;
+                accent = Styles.accent;
+            });
         }
     }
 }
