@@ -15,11 +15,11 @@
                 </Grid.Resources>
                 <StackPanel x:Name="headerLeft" HorizontalAlignment="Left">
                     <Image VerticalAlignment="Center"
-                                    Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
-                                    Width="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=SmallIconWidth}"
-                                    Height="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=SmallIconHeight}"/>
+                        Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
+                        Width="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=SmallIconWidth}"
+                        Height="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=SmallIconHeight}"/>
                     <Label VerticalAlignment="Center" Foreground="{Binding foreground}"
-                                    Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
+                        Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
                 </StackPanel>
                 <StackPanel x:Name="headerRight" HorizontalAlignment="Right">
                     <StackPanel.Resources>
@@ -41,8 +41,8 @@
                 </StackPanel>
             </Grid>
             <Border BorderBrush="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowGlassBrush}"
-                            BorderThickness="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=BorderWidthLarger}"
-                            CornerRadius="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowCornerRadius}"/>
+                BorderThickness="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=BorderWidthLarger}"
+                CornerRadius="{Binding Source={x:Static local:SystemParametersExt.instance}, Path=WindowCornerRadius}"/>
         </Grid>
     </ControlTemplate>
 </ResourceDictionary>
