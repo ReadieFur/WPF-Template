@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Reflection;
 
-namespace WPFTemplate.Tests
+namespace WPFTemplate.Tests.Testing
 {
     /// <summary>
     /// Interaction logic for Window1.xaml

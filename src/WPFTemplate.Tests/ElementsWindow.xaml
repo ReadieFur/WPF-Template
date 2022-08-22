@@ -1,4 +1,4 @@
-﻿<wpfTemplate:WindowBase
+﻿<templateControls:WindowBase
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,16 +6,16 @@
     mc:Ignorable="d"
 
     xmlns:local="clr-namespace:WPFTemplate.Tests"
-    xmlns:wpfTemplate="clr-namespace:WPFTemplate;assembly=WPFTemplate"
-    xmlns:styles="clr-namespace:WPFTemplate.Styles;assembly=WPFTemplate"
+    xmlns:templateControls="clr-namespace:WPFTemplate.Controls;assembly=WPFTemplate"
+    xmlns:templateStyles="clr-namespace:WPFTemplate.Styles;assembly=WPFTemplate"
     x:Class="WPFTemplate.Tests.ElementsWindow"
 
     Title="Elements Preview" SizeToContent="WidthAndHeight" ResizeMode="NoResize"
     Background="{Binding background}">
 
-    <wpfTemplate:WindowBase.DataContext>
-        <styles:XAML x:Name="Styles"/>
-    </wpfTemplate:WindowBase.DataContext>
+    <templateControls:WindowBase.DataContext>
+        <templateStyles:BindableStyles x:Name="Styles"/>
+    </templateControls:WindowBase.DataContext>
 
     <StackPanel Width="250" Margin="10">
         <!--<wpfTemplate:Button Content="Button" Height="50"
@@ -76,4 +76,4 @@
             <wpfTemplate:ListViewItem Content="Item1"/>
         </wpfTemplate:ListView>-->
     </StackPanel>
-</wpfTemplate:WindowBase>
+</templateControls:WindowBase>

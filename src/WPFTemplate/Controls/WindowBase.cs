@@ -2,8 +2,9 @@
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
+using WPFTemplate.Extensions;
 
-namespace WPFTemplate
+namespace WPFTemplate.Controls
 {
     public class WindowBase : Window
     {
@@ -109,10 +110,7 @@ namespace WPFTemplate
         /// <param name="e"></param>
         protected virtual void WindowBase_BoundsChanged(object? sender, EventArgs e)
         {
-            Helpers.InvokeDispatcher(() =>
-            {
-                if (WindowState != WindowState.Maximized) RestoreBounds = new(Top, Left, Width, Height);
-            });
+            if (WindowState != WindowState.Maximized) RestoreBounds = new(Top, Left, Width, Height);
         }
     }
 }

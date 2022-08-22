@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 
-namespace WPFTemplate.Tests
+namespace WPFTemplate.Tests.Testing
 {
     public class NestedStringConverter : TypeConverter
     {

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WPFTemplate
+namespace WPFTemplate.Tests.Testing
 {
     //Unfortunatly this won't work for binding because when the xaml tries to update this property on the base class.
     //It will fail as it can't find the DependencyProperty.

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPFTemplate.Tests
+namespace WPFTemplate.Tests.Testing
 {
     /// <summary>
     /// Interaction logic for DataBinding.xaml

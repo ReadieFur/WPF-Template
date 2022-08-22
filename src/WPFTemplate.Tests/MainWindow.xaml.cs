@@ -1,4 +1,4 @@
-﻿using System.Windows;
+﻿using WPFTemplate.Controls;
 
 namespace WPFTemplate.Tests
 {

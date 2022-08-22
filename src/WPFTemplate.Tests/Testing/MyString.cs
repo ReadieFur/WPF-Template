@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFTemplate.Tests
+namespace WPFTemplate.Tests.Testing
 {
     public class MyString : INotifyPropertyChanged
     {

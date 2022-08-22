@@ -3,6 +3,7 @@ using System.Timers;
 using System.Windows;
 using System.Windows.Media;
 using Microsoft.Win32;
+using WPFTemplate.Extensions;
 
 namespace WPFTemplate.Styles
 {
@@ -170,13 +171,11 @@ namespace WPFTemplate.Styles
                         foreground = darkThemeForeground;
                     }
                 }
-                catch {}
+                catch { }
             }
             else changeDetected = true;
 
             if (changeDetected) onChange?.Invoke();
         }
-
-        public static Brush ToBrush(this string self) => (Brush)new BrushConverter().ConvertFrom(self)!;
     }
 }

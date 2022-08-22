@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
-namespace WPFTemplate
+namespace WPFTemplate.Extensions
 {
     public class SystemParametersExt
     {
@@ -30,7 +30,7 @@ namespace WPFTemplate
             WindowResizeBorderThicknessLarger.Right, 0);
 
         public double WindowCaptionButtonWidthLarger => SystemParameters.WindowCaptionButtonWidth
-            + (SystemParameters.ResizeFrameVerticalBorderWidth * 2);
+            + SystemParameters.ResizeFrameVerticalBorderWidth * 2;
 
         public Thickness FocusBorderThicknessSides => new(SystemParameters.FocusBorderWidth, 0, SystemParameters.FocusBorderWidth, 0);
         #endregion

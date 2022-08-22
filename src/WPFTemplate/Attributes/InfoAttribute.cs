@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WPFTemplate
+namespace WPFTemplate.Attributes
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
     public class InfoAttribute : Attribute

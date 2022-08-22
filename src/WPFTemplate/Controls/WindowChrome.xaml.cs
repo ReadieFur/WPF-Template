@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using WPFTemplate.Attributes;
+using WPFTemplate.Extensions;
+using WPFTemplate.Interfaces;
+using WPFTemplate.Styles;
 using Shell = System.Windows.Shell;
 
-namespace WPFTemplate
+namespace WPFTemplate.Controls
 {
     public class WindowChrome : WindowBase, IVerifyControlTemplate
     {
         #region Resource setup
-        public static readonly ResourceDictionary resources = Helpers.LoadControlResourceDictionary<WindowChrome>();
+        public static readonly ResourceDictionary resources = ResourceDictionaryExt.LoadControlResourceDictionary<WindowChrome>();
 
         /*static WindowChrome()
         {
@@ -37,7 +41,7 @@ namespace WPFTemplate
         #endregion
 
         #region Template override
-        public static readonly DependencyProperty TemplateDP = Helpers.RegisterDependencyProperty<WindowChrome, ControlTemplate>(
+        public static readonly DependencyProperty TemplateDP = DependencyExt.RegisterDependencyProperty<WindowChrome, ControlTemplate>(
             nameof(Template), resources.GetResource<ControlTemplate>(nameof(WindowChrome)));
         new public ControlTemplate Template { get => (ControlTemplate)GetValue(TemplateDP); set => SetValue(TemplateDP, value); }
         #endregion
@@ -45,7 +49,7 @@ namespace WPFTemplate
         public WindowChrome()
         {
             Shell.WindowChrome.SetWindowChrome(this, new());
-            DataContext = new Styles.XAML();
+            DataContext = new BindableStyles();
         }
 
         #region Style managment
