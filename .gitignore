@@ -362,3 +362,8 @@ MigrationBackup/
 FodyWeavers.xsd
 
 .idea
+
+## USER DEFINED:
+/src/XAMLTemplateSource.xaml
+/src/XAMLTemplateModified.xaml
+/src/XAMLTemplateModified.xaml.cs
