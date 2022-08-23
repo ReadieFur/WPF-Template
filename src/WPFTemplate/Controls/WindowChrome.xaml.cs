@@ -59,6 +59,32 @@ namespace WPFTemplate.Controls
         #region New base properties
         public static readonly DependencyProperty TemplateDP = DependencyExt.RegisterDependencyProperty<WindowChrome, ControlTemplate>(nameof(Template), BASE_TEMPLATE);
         new public ControlTemplate Template { get => (ControlTemplate)GetValue(TemplateDP); set => SetValue(TemplateDP, value); }
+
+        new public ResizeMode ResizeMode
+        {
+            get => base.ResizeMode;
+            set
+            {
+                base.ResizeMode = value;
+                if (resizeButton == null) return;
+
+                switch (value)
+                {
+                    case ResizeMode.NoResize:
+                        if (minimiseButton != null) minimiseButton.Visibility = Visibility.Collapsed;
+                        if (resizeButton != null) resizeButton.Visibility = Visibility.Collapsed;
+                        break;
+                    case ResizeMode.CanMinimize:
+                        if (minimiseButton != null) minimiseButton.Visibility = Visibility.Visible;
+                        if (resizeButton != null) resizeButton.Visibility = Visibility.Collapsed;
+                        break;
+                    case ResizeMode.CanResize | ResizeMode.CanResizeWithGrip:
+                        if (minimiseButton != null) minimiseButton.Visibility = Visibility.Visible;
+                        if (resizeButton != null) resizeButton.Visibility = Visibility.Visible;
+                        break;
+                }
+            }
+        }
         #endregion
 
         private WindowState previousWindowState;
@@ -70,6 +96,7 @@ namespace WPFTemplate.Controls
             Background = "#ffffff".ToBrush();
             BackgroundAlt = "#e1e1e1".ToBrush();
             Accent = "#00adef".ToBrush();
+            
             previousWindowState = WindowState;
 
             Shell.WindowChrome.SetWindowChrome(this, windowChrome);
@@ -95,6 +122,9 @@ namespace WPFTemplate.Controls
             minimiseButton.Click += MinimiseButton_Click;
             resizeButton.Click += ResizeButton_Click;
             closeButton.Click += CloseButton_Click;
+
+            //Trigger the resize mode to update the buttons visibility.
+            ResizeMode = ResizeMode;
         }
         #endregion
 
