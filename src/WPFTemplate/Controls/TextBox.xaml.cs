@@ -33,13 +33,7 @@ namespace WPFTemplate.Controls
 
         protected override void OnStyleChanged(Style? oldStyle, Style? newStyle)
         {
-            if (newStyle == null) newStyle = BASE_STYLE;
-            else
-            {
-                newStyle = newStyle.Unseal();
-                newStyle.SetRootStyle(BASE_STYLE);
-            }
-
+            styleHasChanged = true;
             base.OnStyleChanged(oldStyle, newStyle);
         }
         #endregion

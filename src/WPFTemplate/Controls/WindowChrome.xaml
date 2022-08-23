@@ -25,8 +25,8 @@
                         Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
                 </StackPanel>
                 <StackPanel x:Name="headerRight" HorizontalAlignment="Right">
-                    <!--<StackPanel.Resources>
-                        <Style TargetType="{x:Type local:Button}">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type local:Button}" BasedOn="{x:Static local:Button.BASE_STYLE}">
                             <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -46,16 +46,7 @@
                         PressedBackground="{Binding backgroundAlt}"/>
                     <local:Button x:Name="closeButton" Content="&#xE8BB;"
                         HoverBackground="OrangeRed"
-                        PressedBackground="Red"/>-->
-                    <StackPanel.Resources>
-                        <Style TargetType="{x:Type local:Button}">
-                            <Setter Property="Background" Value="Red"/>
-                            <Setter Property="Width" Value="50"/>
-                        </Style>
-                    </StackPanel.Resources>
-                    <local:Button x:Name="minimiseButton" Content="-" Background="Blue"/>
-                    <local:Button x:Name="resizeButton" Content="O"/>
-                    <local:Button x:Name="closeButton" Content="X" Width="100"/>
+                        PressedBackground="Red"/>
                 </StackPanel>
             </Grid>
             <Border BorderBrush="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowGlassBrush}"
