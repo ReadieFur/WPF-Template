@@ -364,6 +364,5 @@ FodyWeavers.xsd
 .idea
 
 ## USER DEFINED:
-/src/XAMLTemplateSource.xaml
-/src/XAMLTemplateModified.xaml
-/src/XAMLTemplateModified.xaml.cs
+/src/XAMLTemplateSource/*.xaml
+/src/XAMLTemplateSource/*.cs
