@@ -12,7 +12,7 @@ namespace WPFTemplate.Controls
 
         public IntPtr handle { get; private init; }
 
-        new public bool IsLoaded { get; protected set; } = false;
+        new public bool IsLoaded { get; private set; } = false;
         new public double MinWidth
         {
             get => base.MinWidth;
