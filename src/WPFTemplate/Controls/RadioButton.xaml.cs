@@ -63,11 +63,7 @@ namespace WPFTemplate.Controls
 
         static RadioButton() => BASE_STYLE.Seal();
 
-        public RadioButton()
-        {
-            DataContext = this;
-            Loaded += OnLoaded;
-        }
+        public RadioButton() => Loaded += OnLoaded;
         #endregion
     }
 }

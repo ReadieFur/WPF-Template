@@ -63,11 +63,7 @@ namespace WPFTemplate.Controls
 
         static CheckBox() => BASE_STYLE.Seal();
 
-        public CheckBox()
-        {
-            DataContext = this;
-            Loaded += OnLoaded;
-        }
+        public CheckBox() => Loaded += OnLoaded;
         #endregion
     }
 }

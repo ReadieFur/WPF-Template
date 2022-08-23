@@ -40,11 +40,7 @@ namespace WPFTemplate.Controls
 
         static TextBox() => BASE_STYLE.Seal();
 
-        public TextBox()
-        {
-            DataContext = this;
-            Loaded += OnLoaded;
-        }
+        public TextBox() => Loaded += OnLoaded;
         #endregion
     }
 }

@@ -10,11 +10,11 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Button" TargetType="{x:Type Button}">
+    <Style x:Key="Button" TargetType="{x:Type local:Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Foreground" Value="{Binding Foreground}"/>
-        <Setter Property="Background" Value="{Binding Background}"/>
-        <Setter Property="BorderBrush" Value="{Binding BorderBrush}"/>
+        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}"/>
+        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=Background}"/>
+        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -27,22 +27,22 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding PressedBorderBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource Self}, Path=PressedBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Foreground" Value="{Binding HoverForeground}"/>
-                            <Setter Property="Background" TargetName="border" Value="{Binding HoverBackground}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding HoverBorderBrush}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=HoverForeground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=HoverBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=HoverBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Foreground" Value="{Binding PressedForeground}"/>
-                            <Setter Property="Background" TargetName="border" Value="{Binding PressedBackground}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding PressedBorderBrush}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=PressedForeground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=PressedBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=PressedBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{Binding DisabledForeground}"/>
-                            <Setter Property="Background" TargetName="border" Value="{Binding DisabledBackground}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding DisabledBorderBrush}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=DisabledForeground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=DisabledBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=DisabledBorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

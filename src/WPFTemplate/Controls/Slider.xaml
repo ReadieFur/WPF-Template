@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFTemplate.Controls">
     <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -15,58 +16,58 @@
     </Style>
     <ControlTemplate x:Key="SliderThumbHorizontalDefault" TargetType="{x:Type Thumb}">
         <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-            <Path x:Name="grip" Data="M 0,0 C0,0 11,0 11,0 11,0 11,18 11,18 11,18 0,18 0,18 0,18 0,0 0,0 z" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" SnapsToDevicePixels="True" Stretch="Fill" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
+            <Path x:Name="grip" Data="M 0,0 C0,0 11,0 11,0 11,0 11,18 11,18 11,18 0,18 0,18 0,18 0,0 0,0 z" Fill="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=Background}" Stroke="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=BorderBrush}" SnapsToDevicePixels="True" Stretch="Fill" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding HoverBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding HoverBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsDragging" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding PressedBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding PressedBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding DisabledBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding DisabledBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBorderBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <ControlTemplate x:Key="SliderThumbHorizontalTop" TargetType="{x:Type Thumb}">
         <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-            <Path x:Name="grip" Data="M 0,6 C0,6 5.5,0 5.5,0 5.5,0 11,6 11,6 11,6 11,18 11,18 11,18 0,18 0,18 0,18 0,6 0,6 z" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" SnapsToDevicePixels="True" Stretch="Fill" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
+            <Path x:Name="grip" Data="M 0,6 C0,6 5.5,0 5.5,0 5.5,0 11,6 11,6 11,6 11,18 11,18 11,18 0,18 0,18 0,18 0,6 0,6 z" Fill="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=Background}" Stroke="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=BorderBrush}" SnapsToDevicePixels="True" Stretch="Fill" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding HoverBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding HoverBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsDragging" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding PressedBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding PressedBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding DisabledBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding DisabledBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBorderBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <ControlTemplate x:Key="SliderThumbHorizontalBottom" TargetType="{x:Type Thumb}">
         <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-            <Path x:Name="grip" Data="M 0,12 C0,12 5.5,18 5.5,18 5.5,18 11,12 11,12 11,12 11,0 11,0 11,0 0,0 0,0 0,0 0,12 0,12 z" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" SnapsToDevicePixels="True" Stretch="Fill" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
+            <Path x:Name="grip" Data="M 0,12 C0,12 5.5,18 5.5,18 5.5,18 11,12 11,12 11,12 11,0 11,0 11,0 0,0 0,0 0,0 0,12 0,12 z" Fill="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=Background}" Stroke="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=BorderBrush}" SnapsToDevicePixels="True" Stretch="Fill" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding HoverBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding HoverBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsDragging" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding PressedBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding PressedBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding DisabledBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding DisabledBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBorderBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -80,7 +81,7 @@
                 </Grid.RowDefinitions>
                 <TickBar x:Name="TopTick" Fill="{TemplateBinding Foreground}" Height="4" Margin="0,0,0,2" Placement="Top" Grid.Row="0" Visibility="Collapsed"/>
                 <TickBar x:Name="BottomTick" Fill="{TemplateBinding Foreground}" Height="4" Margin="0,2,0,0" Placement="Bottom" Grid.Row="2" Visibility="Collapsed"/>
-                <Border x:Name="TrackBackground" Background="{Binding TrackBackground}" BorderBrush="{Binding TrackBorderBrush}" BorderThickness="1" Height="4.0" Margin="5,0" Grid.Row="1" VerticalAlignment="center">
+                <Border x:Name="TrackBackground" Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=TrackBackground}" BorderBrush="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=TrackBorderBrush}" BorderThickness="1" Height="4.0" Margin="5,0" Grid.Row="1" VerticalAlignment="center">
                     <Canvas Margin="-6,-1">
                         <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="4.0" Visibility="Hidden"/>
                     </Canvas>
@@ -123,58 +124,58 @@
     </ControlTemplate>
     <ControlTemplate x:Key="SliderThumbVerticalDefault" TargetType="{x:Type Thumb}">
         <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-            <Path x:Name="grip" Data="M0.5,0.5 L18.5,0.5 18.5,11.5 0.5,11.5z" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" Stretch="Fill"/>
+            <Path x:Name="grip" Data="M0.5,0.5 L18.5,0.5 18.5,11.5 0.5,11.5z" Fill="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=Background}" Stroke="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=BorderBrush}" Stretch="Fill"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding HoverBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding HoverBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsDragging" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding PressedBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding PressedBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding DisabledBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding DisabledBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBorderBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <ControlTemplate x:Key="SliderThumbVerticalLeft" TargetType="{x:Type Thumb}">
         <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-            <Path x:Name="grip" Data="M 6,11 C6,11 0,5.5 0,5.5 0,5.5 6,0 6,0 6,0 18,0 18,0 18,0 18,11 18,11 18,11 6,11 6,11 z" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" Stretch="Fill"/>
+            <Path x:Name="grip" Data="M 6,11 C6,11 0,5.5 0,5.5 0,5.5 6,0 6,0 6,0 18,0 18,0 18,0 18,11 18,11 18,11 6,11 6,11 z" Fill="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=Background}" Stroke="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=BorderBrush}" Stretch="Fill"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding HoverBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding HoverBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsDragging" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding PressedBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding PressedBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding DisabledBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding DisabledBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBorderBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <ControlTemplate x:Key="SliderThumbVerticalRight" TargetType="{x:Type Thumb}">
         <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-            <Path x:Name="grip" Data="M 12,11 C12,11 18,5.5 18,5.5 18,5.5 12,0 12,0 12,0 0,0 0,0 0,0 0,11 0,11 0,11 12,11 12,11 z" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" Stretch="Fill"/>
+            <Path x:Name="grip" Data="M 12,11 C12,11 18,5.5 18,5.5 18,5.5 12,0 12,0 12,0 0,0 0,0 0,0 0,11 0,11 0,11 12,11 12,11 z" Fill="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=Background}" Stroke="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=BorderBrush}" Stretch="Fill"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding HoverBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding HoverBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=HoverBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsDragging" Value="true">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding PressedBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding PressedBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=PressedBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="grip" Value="{Binding DisabledBackground}"/>
-                <Setter Property="Stroke" TargetName="grip" Value="{Binding DisabledBorderBrush}"/>
+                <Setter Property="Fill" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBackground}"/>
+                <Setter Property="Stroke" TargetName="grip" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=DisabledBorderBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -188,7 +189,7 @@
                 </Grid.ColumnDefinitions>
                 <TickBar x:Name="TopTick" Grid.Column="0" Fill="{TemplateBinding Foreground}" Margin="0,0,2,0" Placement="Left" Visibility="Collapsed" Width="4"/>
                 <TickBar x:Name="BottomTick" Grid.Column="2" Fill="{TemplateBinding Foreground}" Margin="2,0,0,0" Placement="Right" Visibility="Collapsed" Width="4"/>
-                <Border x:Name="TrackBackground" Background="{Binding TrackBackground}" BorderBrush="{Binding TrackBorderBrush}" BorderThickness="1" Grid.Column="1" HorizontalAlignment="center" Margin="0,5" Width="4.0">
+                <Border x:Name="TrackBackground" Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=TrackBackground}" BorderBrush="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Slider}}, Path=TrackBorderBrush}" BorderThickness="1" Grid.Column="1" HorizontalAlignment="center" Margin="0,5" Width="4.0">
                     <Canvas Margin="-1,-6">
                         <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Visibility="Hidden" Width="4.0"/>
                     </Canvas>
@@ -233,7 +234,7 @@
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{Binding Foreground}"/>
+        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}"/>
         <Setter Property="Template" Value="{StaticResource SliderHorizontal}"/>
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Vertical">

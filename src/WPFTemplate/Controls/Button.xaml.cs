@@ -63,11 +63,7 @@ namespace WPFTemplate.Controls
         
         static Button() => BASE_STYLE.Seal();
 
-        public Button()
-        {
-            DataContext = this;
-            Loaded += OnLoaded;
-        }
+        public Button() => Loaded += OnLoaded;
         #endregion
     }
 }

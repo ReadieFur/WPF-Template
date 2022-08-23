@@ -49,11 +49,7 @@ namespace WPFTemplate.Controls
 
         static ListViewItem() => BASE_STYLE.Seal();
 
-        public ListViewItem()
-        {
-            DataContext = this;
-            Loaded += OnLoaded;
-        }
+        public ListViewItem() => Loaded += OnLoaded;
         #endregion
     }
 }

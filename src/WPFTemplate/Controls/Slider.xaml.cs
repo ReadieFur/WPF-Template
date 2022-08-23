@@ -55,11 +55,7 @@ namespace WPFTemplate.Controls
 
         static Slider() => BASE_STYLE.Seal();
 
-        public Slider()
-        {
-            DataContext = this;
-            Loaded += OnLoaded;
-        }
+        public Slider() => Loaded += OnLoaded;
         #endregion
     }
 }
