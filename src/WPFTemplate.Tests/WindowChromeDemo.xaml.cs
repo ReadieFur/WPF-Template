@@ -1,4 +1,5 @@
 ﻿using WPFTemplate.Controls;
+using WPFTemplate.Styles;
 
 namespace WPFTemplate.Tests
 {
@@ -10,6 +11,21 @@ namespace WPFTemplate.Tests
         public WindowChromeDemo()
         {
             InitializeComponent();
+
+            StylesManager.onChange += StylesManager_onChange;
+            //Trigger the styles to be updated here to override the default values.
+            StylesManager_onChange();
+        }
+
+        private void StylesManager_onChange()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                Foreground = StylesManager.foreground;
+                Background = StylesManager.background;
+                BackgroundAlt = StylesManager.backgroundAlt;
+                Accent = StylesManager.accent;
+            });
         }
     }
 }

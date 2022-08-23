@@ -11,5 +11,5 @@
         x:Class="WPFTemplate.Tests.WindowChromeDemo"
     
         d:DesignHeight="450" d:DesignWidth="800"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WindowChromeDemo" Height="450" Width="800">
 </templateControls:WindowChrome>

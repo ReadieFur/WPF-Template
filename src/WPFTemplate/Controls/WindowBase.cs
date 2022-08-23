@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Input;
 using System.Windows.Interop;
-using WPFTemplate.Extensions;
 
 namespace WPFTemplate.Controls
 {
@@ -91,24 +89,19 @@ namespace WPFTemplate.Controls
 
         public WindowBase()
         {
-            handle = new WindowInteropHelper(this).Handle;
+            handle = new WindowInteropHelper(this).EnsureHandle();
 
             Loaded += WindowBase_Loaded;
-            LocationChanged += WindowBase_BoundsChanged;
-            SizeChanged += WindowBase_BoundsChanged;
+            LocationChanged += (_, e) => OnBoundsChanged(e);
+            SizeChanged += (_, e) => OnBoundsChanged(e);
         }
 
-        protected virtual void WindowBase_Loaded(object sender, RoutedEventArgs e)
-        {
-            IsLoaded = true;
-        }
+        protected virtual void WindowBase_Loaded(object sender, RoutedEventArgs e) => IsLoaded = true;
 
         /// <summary>
-        /// Fires when the position or size of the window has changed.
+        /// Called when the position or size of the window has changed.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected virtual void WindowBase_BoundsChanged(object? sender, EventArgs e)
+        protected virtual void OnBoundsChanged(EventArgs e)
         {
             if (WindowState != WindowState.Maximized) RestoreBounds = new(Top, Left, Width, Height);
         }

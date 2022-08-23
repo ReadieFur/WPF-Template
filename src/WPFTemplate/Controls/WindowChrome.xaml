@@ -3,12 +3,12 @@
                     xmlns:extensions="clr-namespace:WPFTemplate.Extensions"
                     xmlns:local="clr-namespace:WPFTemplate.Controls">
     <ControlTemplate x:Key="WindowChrome" TargetType="{x:Type local:WindowChrome}">
-        <Grid Background="{Binding background}">
+        <Grid x:Name="root" Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Background}">
             <ContentPresenter Content="{TemplateBinding Content}"
                         Margin="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowNonClientFrameThicknessTopOnly}"/>
             <Grid x:Name="headerBar" VerticalAlignment="Top"
                 Height="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowNonClientFrameThickness.Top}"
-                Background="{Binding background}">
+                Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Background}">
                 <Grid.Resources>
                     <Style TargetType="{x:Type StackPanel}">
                         <Setter Property="Orientation" Value="Horizontal"/>
@@ -21,7 +21,7 @@
                         Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
                         Width="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=SmallIconWidth}"
                         Height="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=SmallIconHeight}"/>
-                    <Label VerticalAlignment="Center" Foreground="{Binding foreground}"
+                    <Label VerticalAlignment="Center" Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"
                         Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
                 </StackPanel>
                 <StackPanel x:Name="headerRight" HorizontalAlignment="Right">
@@ -30,9 +30,11 @@
                             <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
-                            <Setter Property="Foreground" Value="{Binding foreground}"/>
-                            <Setter Property="HoverForeground" Value="{Binding foreground}"/>
-                            <Setter Property="PressedForeground" Value="{Binding foreground}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"/>
+                            <Setter Property="HoverBorderBrush" Value="Transparent"/>
+                            <Setter Property="HoverForeground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"/>
+                            <Setter Property="PressedBorderBrush" Value="Transparent"/>
+                            <Setter Property="PressedForeground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"/>
                             <Setter Property="Margin" Value="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=FocusBorderThicknessSides}"/>
                             <Setter Property="FontSize" Value="{Binding Source={x:Static extensions:SystemFontsExt.instance}, Path=CaptionFontSize}"/>
                             <Setter Property="Width" Value="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowCaptionButtonWidthLarger}"/>
@@ -41,17 +43,18 @@
                         </Style>
                     </StackPanel.Resources>
                     <local:Button x:Name="minimiseButton" Content="&#xE921;"
-                        HoverBackground="{Binding backgroundAlt}"
-                        PressedBackground="{Binding backgroundAlt}"/>
+                        HoverBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"
+                        PressedBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"/>
                     <local:Button x:Name="resizeButton" Content="&#xE922;"
-                        HoverBackground="{Binding backgroundAlt}"
-                        PressedBackground="{Binding backgroundAlt}"/>
+                        HoverBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"
+                        PressedBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"/>
                     <local:Button x:Name="closeButton" Content="&#xE8BB;"
                         HoverBackground="OrangeRed"
                         PressedBackground="Red"/>
                 </StackPanel>
             </Grid>
-            <Border BorderBrush="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowGlassBrush}"
+            <Border x:Name="windowBorder"
+                BorderBrush="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Accent}"
                 BorderThickness="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=BorderWidthLarger}"
                 CornerRadius="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowCornerRadius}"/>
         </Grid>

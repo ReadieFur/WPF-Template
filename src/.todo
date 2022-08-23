@@ -1,0 +1,13 @@
+Todo:
+    ☐ Get windows 11 window resize prompts working on WindowChrome. @started(22-08-23 15:09)
+        - Put on hold until I can figure out how to fire the underlying events and still return the value for the resize dialog.
+        - https://github.com/dotnet/wpf/issues/4825
+        - https://github.com/ghost1372/HandyControls/commit/41fce1df04b45ab9a7a8ebad33f3810a89a1ad13
+    ☐ Blurred window.
+    ☐ Detect when the window is aero snapped and remove the border corner radius.
+
+In-progress:
+
+Done:
+
+Cancelled:

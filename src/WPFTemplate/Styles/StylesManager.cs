@@ -7,7 +7,7 @@ using WPFTemplate.Extensions;
 
 namespace WPFTemplate.Styles
 {
-    public static class Styles
+    public static class StylesManager
     {
         private static Timer updateTimer = new Timer();
         private static SolidColorBrush _darkThemeBackground = "#0d1117".ToBrush();
@@ -16,7 +16,7 @@ namespace WPFTemplate.Styles
         private static SolidColorBrush _lightThemeBackground = "#ffffff".ToBrush();
         private static SolidColorBrush _lightThemeBackgroundAlt = "#e1e1e1".ToBrush();
         private static SolidColorBrush _lightThemeForeground = "#000000".ToBrush();
-        private static Brush _accent = "#00adef".ToBrush();
+        private static Brush _accent = "#00adef".ToBrush(); //Windows blue.
         private static bool _darkTheme = true;
         private static bool _useSystemTheme = true;
 
@@ -125,7 +125,7 @@ namespace WPFTemplate.Styles
         }
         public static event Action? onChange;
 
-        static Styles()
+        static StylesManager()
         {
             updateTimer.Interval = 5000;
             updateTimer.Elapsed += (_, _) => UpdateThemes();
