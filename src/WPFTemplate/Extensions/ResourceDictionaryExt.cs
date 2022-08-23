@@ -26,9 +26,9 @@ namespace WPFTemplate.Extensions
         public static T GetResource<T>(this ResourceDictionary self, string key)
         {
             if (!self.Contains(key))
-                throw new KeyNotFoundException($"The resource '{key}' was not found in the resource dictionary '{nameof(self)}'.");
+                throw new KeyNotFoundException($"The resource '{key}' was not found in the resource dictionary '{self}'.");
             if (!self[key].GetType().IsAssignableTo(typeof(T)))
-                throw new InvalidCastException($"The resource '{key}' in the resource dictionary '{nameof(self)}' is not of type '{typeof(T).Name}'.");
+                throw new InvalidCastException($"The resource '{key}' in the resource dictionary '{self}' is not of type '{typeof(T).Name}'.");
             return (T)self[key];
         }
     }

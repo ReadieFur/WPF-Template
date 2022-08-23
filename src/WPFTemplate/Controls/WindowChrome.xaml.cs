@@ -11,16 +11,18 @@ namespace WPFTemplate.Controls
 {
     public class WindowChrome : WindowBase, IVerifyControlTemplate
     {
-        #region Resource setup
-        public static readonly ResourceDictionary resources = ResourceDictionaryExt.LoadControlResourceDictionary<WindowChrome>();
+        #region Resources
+        public static readonly ResourceDictionary RESOURCES = ResourceDictionaryExt.LoadControlResourceDictionary<WindowChrome>();
+        public static readonly ControlTemplate BASE_TEMPLATE = RESOURCES.GetResource<ControlTemplate>(nameof(WindowChrome));
+        #endregion
 
-        /*static WindowChrome()
-        {
-            //Didn't seem to be working unfortunately. I'd just end up rendering a black screen.
-            //[assembly: ThemeInfo(ResourceDictionaryLocation.SourceAssembly, ResourceDictionaryLocation.SourceAssembly)]
-            Application.Current.Resources.MergedDictionaries.Add(resources);
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(WindowChrome), new FrameworkPropertyMetadata(typeof(WindowChrome)));
-        }*/
+        #region Template properties
+        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Grid headerBar { get; private set; }
+        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerLeft { get; private set; }
+        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerRight { get; private set; }
+        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button minimiseButton { get; private set; }
+        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button resizeButton { get; private set; }
+        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button closeButton { get; private set; }
         #endregion
 
         #region Obsolete properties
@@ -31,20 +33,18 @@ namespace WPFTemplate.Controls
         new public WindowStyle WindowStyle { get; set; } = WindowStyle.SingleBorderWindow;
         #endregion
 
-        #region Template properties
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Grid headerBar { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerLeft { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerRight { get; private set; }
-        //[Info(TEMPLATE_PROPERTY_KEY)] protected Button minimiseButton { get; private set; }
-        //[Info(TEMPLATE_PROPERTY_KEY)] protected Button resizeButton { get; private set; }
-        //[Info(TEMPLATE_PROPERTY_KEY)] protected Button closeButton { get; private set; }
-        #endregion
-
-        #region Template override
-        public static readonly DependencyProperty TemplateDP = DependencyExt.RegisterDependencyProperty<WindowChrome, ControlTemplate>(
-            nameof(Template), resources.GetResource<ControlTemplate>(nameof(WindowChrome)));
+        #region New base properties
+        public static readonly DependencyProperty TemplateDP = DependencyExt.RegisterDependencyProperty<WindowChrome, ControlTemplate>(nameof(Template), BASE_TEMPLATE);
         new public ControlTemplate Template { get => (ControlTemplate)GetValue(TemplateDP); set => SetValue(TemplateDP, value); }
         #endregion
+
+        static WindowChrome()
+        {
+            //Didn't seem to be working unfortunately. I'd just end up rendering a black screen.
+            //[assembly: ThemeInfo(ResourceDictionaryLocation.SourceAssembly, ResourceDictionaryLocation.SourceAssembly)]
+            //Application.Current.Resources.MergedDictionaries.Add(resources);
+            //DefaultStyleKeyProperty.OverrideMetadata(typeof(WindowChrome), new FrameworkPropertyMetadata(typeof(WindowChrome)));
+        }
 
         public WindowChrome()
         {
