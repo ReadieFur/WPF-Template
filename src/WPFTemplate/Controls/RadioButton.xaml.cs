@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using WPFTemplate.Extensions;
 
@@ -7,8 +6,6 @@ namespace WPFTemplate.Controls
 {
     public class RadioButton : System.Windows.Controls.RadioButton
     {
-        public static readonly ResourceDictionary resources = ResourceDictionaryExt.LoadControlResourceDictionary<RadioButton>();
-
         #region Background
         public static readonly DependencyProperty HoverBackgroundDP = DependencyExt.RegisterDependencyProperty<RadioButton, Brush>(nameof(HoverBackground), "#FFF3F9FF".ToBrush());
         public Brush HoverBackground { get => (Brush)GetValue(HoverBackgroundDP); set => SetValue(HoverBackgroundDP, value); }
@@ -44,19 +41,39 @@ namespace WPFTemplate.Controls
         public static readonly DependencyProperty DisabledGlyphDP = DependencyExt.RegisterDependencyProperty<RadioButton, Brush>(nameof(DisabledGlyph), "#FF707070".ToBrush());
         public Brush DisabledGlyph { get => (Brush)GetValue(DisabledGlyphDP); set => SetValue(DisabledGlyphDP, value); }
         #endregion
-        
-        #region Hidden base properties
-        [Obsolete("This property is not changeable.", true)]
-        new public Style Style { get => base.Style; set => base.Style = value; }
 
-        [Obsolete("This property is not changeable.", true)]
-        new public object DataContext { get => base.DataContext; set => base.DataContext = value; }
+        #region I wish multi-inheritance was a thing.
+        #region Resources
+        public static readonly ResourceDictionary RESOURCES = ResourceDictionaryExt.LoadControlResourceDictionary<RadioButton>();
+        public static readonly Style BASE_STYLE = RESOURCES.GetResource<Style>(nameof(RadioButton));
+
+        protected bool styleHasChanged = false;
+
+        protected virtual void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (!styleHasChanged) Style = BASE_STYLE;
+        }
+
+        protected override void OnStyleChanged(Style? oldStyle, Style? newStyle)
+        {
+            if (newStyle == null) newStyle = BASE_STYLE;
+            else
+            {
+                newStyle = newStyle.Unseal();
+                newStyle.SetRootStyle(BASE_STYLE);
+            }
+
+            base.OnStyleChanged(oldStyle, newStyle);
+        }
         #endregion
+
+        static RadioButton() => BASE_STYLE.Seal();
 
         public RadioButton()
         {
-            base.Style = resources.GetResource<Style>(nameof(RadioButton));
-            base.DataContext = this;
+            DataContext = this;
+            Loaded += OnLoaded;
         }
+        #endregion
     }
 }
