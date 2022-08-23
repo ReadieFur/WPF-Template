@@ -3,10 +3,12 @@
                     xmlns:extensions="clr-namespace:WPFTemplate.Extensions"
                     xmlns:local="clr-namespace:WPFTemplate.Controls">
     <ControlTemplate x:Key="WindowChrome" TargetType="{x:Type local:WindowChrome}">
-        <Grid>
+        <Grid Background="{Binding background}">
             <ContentPresenter Content="{TemplateBinding Content}"
                         Margin="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowNonClientFrameThicknessTopOnly}"/>
-            <Grid x:Name="headerBar" Background="{Binding background}">
+            <Grid x:Name="headerBar" VerticalAlignment="Top"
+                Height="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowNonClientFrameThickness.Top}"
+                Background="{Binding background}">
                 <Grid.Resources>
                     <Style TargetType="{x:Type StackPanel}">
                         <Setter Property="Orientation" Value="Horizontal"/>
@@ -23,8 +25,8 @@
                         Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
                 </StackPanel>
                 <StackPanel x:Name="headerRight" HorizontalAlignment="Right">
-                    <StackPanel.Resources>
-                        <Style TargetType="{x:Type Button}">
+                    <!--<StackPanel.Resources>
+                        <Style TargetType="{x:Type local:Button}">
                             <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -36,9 +38,24 @@
                             <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
                         </Style>
                     </StackPanel.Resources>
-                    <Button x:Name="minimiseButton" Content="&#xE921;"/>
-                    <Button x:Name="resizeButton" Content="&#xE922;"/>
-                    <Button x:Name="closeButton" Content="&#xE8BB;"/>
+                    <local:Button x:Name="minimiseButton" Content="&#xE921;"
+                        HoverBackground="{Binding backgroundAlt}"
+                        PressedBackground="{Binding backgroundAlt}"/>
+                    <local:Button x:Name="resizeButton" Content="&#xE922;"
+                        HoverBackground="{Binding backgroundAlt}"
+                        PressedBackground="{Binding backgroundAlt}"/>
+                    <local:Button x:Name="closeButton" Content="&#xE8BB;"
+                        HoverBackground="OrangeRed"
+                        PressedBackground="Red"/>-->
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type local:Button}">
+                            <Setter Property="Background" Value="Red"/>
+                            <Setter Property="Width" Value="50"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <local:Button x:Name="minimiseButton" Content="-" Background="Blue"/>
+                    <local:Button x:Name="resizeButton" Content="O"/>
+                    <local:Button x:Name="closeButton" Content="X" Width="100"/>
                 </StackPanel>
             </Grid>
             <Border BorderBrush="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=WindowGlassBrush}"

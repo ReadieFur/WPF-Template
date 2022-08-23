@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using WPFTemplate.Extensions;
 
@@ -7,8 +6,6 @@ namespace WPFTemplate.Controls
 {
     public class ListViewItem : System.Windows.Controls.ListViewItem
     {
-        public static readonly ResourceDictionary resources = ResourceDictionaryExt.LoadControlResourceDictionary<ListViewItem>();
-
         #region Background
         public static readonly DependencyProperty HoverBackgroundDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(HoverBackground), "#1F26A0DA".ToBrush());
         public Brush HoverBackground { get => (Brush)GetValue(HoverBackgroundDP); set => SetValue(HoverBackgroundDP, value); }
@@ -31,18 +28,38 @@ namespace WPFTemplate.Controls
         public Brush InactiveBorderBrush { get => (Brush)GetValue(InactiveBorderBrushDP); set => SetValue(InactiveBorderBrushDP, value); }
         #endregion
 
-        #region Hidden base properties
-        [Obsolete("This property is not changeable.", true)]
-        new public Style Style { get => base.Style; set => base.Style = value; }
+        #region I wish multi-inheritance was a thing.
+        #region Resources
+        public static readonly ResourceDictionary RESOURCES = ResourceDictionaryExt.LoadControlResourceDictionary<ListViewItem>();
+        public static readonly Style BASE_STYLE = RESOURCES.GetResource<Style>(nameof(ListViewItem));
 
-        [Obsolete("This property is not changeable.", true)]
-        new public object DataContext { get => base.DataContext; set => base.DataContext = value; }
+        protected bool styleHasChanged = false;
+
+        protected virtual void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (!styleHasChanged) Style = BASE_STYLE;
+        }
+
+        protected override void OnStyleChanged(Style? oldStyle, Style? newStyle)
+        {
+            if (newStyle == null) newStyle = BASE_STYLE;
+            else
+            {
+                newStyle = newStyle.Unseal();
+                newStyle.SetRootStyle(BASE_STYLE);
+            }
+
+            base.OnStyleChanged(oldStyle, newStyle);
+        }
         #endregion
+
+        static ListViewItem() => BASE_STYLE.Seal();
 
         public ListViewItem()
         {
-            base.Style = resources.GetResource<Style>(nameof(ListViewItem));
-            base.DataContext = this;
+            DataContext = this;
+            Loaded += OnLoaded;
         }
+        #endregion
     }
 }

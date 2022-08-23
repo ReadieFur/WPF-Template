@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using WPFTemplate.Extensions;
 
@@ -7,8 +6,6 @@ namespace WPFTemplate.Controls
 {
     public class Button : System.Windows.Controls.Button
     {
-        public static readonly ResourceDictionary resources = ResourceDictionaryExt.LoadControlResourceDictionary<Button>();
-
         //See the comments left in "WPFTemplate.Tests.Testing.BindingProperty.cs" for more information on this.
         //TL;DR: The way WPF makes you work with this is VERY messy and EXTREMELY repetitive. I tried abstracting it but WPF said no.
         #region Background
@@ -44,18 +41,39 @@ namespace WPFTemplate.Controls
         public Brush DisabledForeground { get => (Brush)GetValue(DisabledForegroundDP); set => SetValue(DisabledForegroundDP, value); }
         #endregion
 
-        #region Hidden base properties
-        [Obsolete("This property is not changeable.", true)]
-        new public Style Style { get => base.Style; set => base.Style = value; }
+        #region I wish multi-inheritance was a thing.
+        //...And no I don't mean interfaces.
+        #region Resources
+        public static readonly ResourceDictionary RESOURCES = ResourceDictionaryExt.LoadControlResourceDictionary<Button>();
+        public static readonly Style BASE_STYLE = RESOURCES.GetResource<Style>(nameof(Button));
 
-        [Obsolete("This property is not changeable.", true)]
-        new public object DataContext { get => base.DataContext; set => base.DataContext = value; }
+        protected bool styleHasChanged = false;
+
+        protected virtual void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (!styleHasChanged) Style = BASE_STYLE;
+        }
+
+        protected override void OnStyleChanged(Style? oldStyle, Style? newStyle)
+        {
+            if (newStyle == null) newStyle = BASE_STYLE;
+            else
+            {
+                newStyle = newStyle.Unseal();
+                newStyle.SetRootStyle(BASE_STYLE);
+            }
+
+            base.OnStyleChanged(oldStyle, newStyle);
+        }
         #endregion
         
+        static Button() => BASE_STYLE.Seal();
+
         public Button()
         {
-            base.Style = resources.GetResource<Style>(nameof(Button));
-            base.DataContext = this;
+            DataContext = this;
+            Loaded += OnLoaded;
         }
+        #endregion
     }
 }
