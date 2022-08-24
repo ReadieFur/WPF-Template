@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:WPFTemplate.Controls">
-    <Style x:Key="TextBox" TargetType="{x:Type TextBox}">
+    <Style x:Key="TextBox" TargetType="{x:Type local:TextBox}">
         <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=Background}"/>
         <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=BorderBrush}"/>
         <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}"/>

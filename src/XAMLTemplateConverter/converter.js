@@ -103,8 +103,8 @@ keys.concat(manualKeys/*, baseKeys*/).forEach(x =>
 
     const defaultValue = x.manual ? "null /*MANUAL*/" : `"${x.value}".ToBrush()`;
 
-    const line1 = `public static readonly DependencyProperty ${propertyName}DP = DependencyExt.RegisterDependencyProperty<${type}, Brush>(nameof(${propertyName}), ${defaultValue});`;
-    const line2 = `public Brush ${propertyName} { get => (Brush)GetValue(${propertyName}DP); set => SetValue(${propertyName}DP, value); }`;
+    const line1 = `public static readonly DependencyProperty ${propertyName}Property = DependencyExt.RegisterDependencyProperty<${type}, Brush>(nameof(${propertyName}), ${defaultValue});`;
+    const line2 = `public Brush ${propertyName} { get => (Brush)GetValue(${propertyName}Property); set => SetValue(${propertyName}Property, value); }`;
     modifiedCS += "\t\t" + line1 + "\n\t\t" + line2 + "\n\n";
 });
 modifiedCS += `\t\tpublic static readonly ResourceDictionary RESOURCES = ResourceDictionaryExt.LoadControlResourceDictionary<${dominantType}>();

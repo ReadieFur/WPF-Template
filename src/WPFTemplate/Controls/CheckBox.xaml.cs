@@ -6,49 +6,49 @@ namespace WPFTemplate.Controls
 {
     public class CheckBox : System.Windows.Controls.CheckBox
     {
-        public static readonly DependencyProperty BackgroundDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(Background), "#FFFFFFFF".ToBrush());
-        new public Brush Background { get => (Brush)GetValue(BackgroundDP); set => SetValue(BackgroundDP, value); }
+        /*public static readonly DependencyProperty BackgroundProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(Background), "#FFFFFFFF".ToBrush());
+        new public Brush Background { get => (Brush)GetValue(BackgroundProperty); set => SetValue(BackgroundProperty, value); }
 
-        public static readonly DependencyProperty BorderBrushDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(BorderBrush), "#FF707070".ToBrush());
-        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushDP); set => SetValue(BorderBrushDP, value); }
+        public static readonly DependencyProperty BorderBrushProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(BorderBrush), "#FF707070".ToBrush());
+        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushProperty); set => SetValue(BorderBrushProperty, value); }
 
-        public static readonly DependencyProperty ForegroundDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(Foreground), "#00000000".ToBrush());
-        new public Brush Foreground { get => (Brush)GetValue(ForegroundDP); set => SetValue(ForegroundDP, value); }
+        public static readonly DependencyProperty ForegroundProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(Foreground), "#00000000".ToBrush());
+        new public Brush Foreground { get => (Brush)GetValue(ForegroundProperty); set => SetValue(ForegroundProperty, value); }*/
 
         #region Background
-        public static readonly DependencyProperty MouseOverBackgroundDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(MouseOverBackground), "#FFF3F9FF".ToBrush());
-        public Brush MouseOverBackground { get => (Brush)GetValue(MouseOverBackgroundDP); set => SetValue(MouseOverBackgroundDP, value); }
+        public static readonly DependencyProperty MouseOverBackgroundProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(MouseOverBackground), "#FFF3F9FF".ToBrush());
+        public Brush MouseOverBackground { get => (Brush)GetValue(MouseOverBackgroundProperty); set => SetValue(MouseOverBackgroundProperty, value); }
 
-        public static readonly DependencyProperty PressedBackgroundDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(PressedBackground), "#FFD9ECFF".ToBrush());
-        public Brush PressedBackground { get => (Brush)GetValue(PressedBackgroundDP); set => SetValue(PressedBackgroundDP, value); }
+        public static readonly DependencyProperty PressedBackgroundProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(PressedBackground), "#FFD9ECFF".ToBrush());
+        public Brush PressedBackground { get => (Brush)GetValue(PressedBackgroundProperty); set => SetValue(PressedBackgroundProperty, value); }
 
-        public static readonly DependencyProperty DisabledBackgroundDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(DisabledBackground), "#FFE6E6E6".ToBrush());
-        public Brush DisabledBackground { get => (Brush)GetValue(DisabledBackgroundDP); set => SetValue(DisabledBackgroundDP, value); }
+        public static readonly DependencyProperty DisabledBackgroundProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(DisabledBackground), "#FFE6E6E6".ToBrush());
+        public Brush DisabledBackground { get => (Brush)GetValue(DisabledBackgroundProperty); set => SetValue(DisabledBackgroundProperty, value); }
         #endregion
 
         #region Border
-        public static readonly DependencyProperty MouseOverBorderBrushDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(MouseOverBorderBrush), "#FF5593FF".ToBrush());
-        public Brush MouseOverBorderBrush { get => (Brush)GetValue(MouseOverBorderBrushDP); set => SetValue(MouseOverBorderBrushDP, value); }
+        public static readonly DependencyProperty MouseOverBorderBrushProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(MouseOverBorderBrush), "#FF5593FF".ToBrush());
+        public Brush MouseOverBorderBrush { get => (Brush)GetValue(MouseOverBorderBrushProperty); set => SetValue(MouseOverBorderBrushProperty, value); }
 
-        public static readonly DependencyProperty PressedBorderBrushDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(PressedBorderBrush), "#FF3C77DD".ToBrush());
-        public Brush PressedBorderBrush { get => (Brush)GetValue(PressedBorderBrushDP); set => SetValue(PressedBorderBrushDP, value); }
+        public static readonly DependencyProperty PressedBorderBrushProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(PressedBorderBrush), "#FF3C77DD".ToBrush());
+        public Brush PressedBorderBrush { get => (Brush)GetValue(PressedBorderBrushProperty); set => SetValue(PressedBorderBrushProperty, value); }
 
-        public static readonly DependencyProperty DisabledBorderBrushDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(DisabledBorderBrush), "#FFBCBCBC".ToBrush());
-        public Brush DisabledBorderBrush { get => (Brush)GetValue(DisabledBorderBrushDP); set => SetValue(DisabledBorderBrushDP, value); }
+        public static readonly DependencyProperty DisabledBorderBrushProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(DisabledBorderBrush), "#FFBCBCBC".ToBrush());
+        public Brush DisabledBorderBrush { get => (Brush)GetValue(DisabledBorderBrushProperty); set => SetValue(DisabledBorderBrushProperty, value); }
         #endregion
 
         #region Glyph
-        public static readonly DependencyProperty GlyphDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(Glyph), "#FF212121".ToBrush());
-        public Brush Glyph { get => (Brush)GetValue(GlyphDP); set => SetValue(GlyphDP, value); }
+        public static readonly DependencyProperty GlyphProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(Glyph), "#FF212121".ToBrush());
+        public Brush Glyph { get => (Brush)GetValue(GlyphProperty); set => SetValue(GlyphProperty, value); }
 
-        public static readonly DependencyProperty MouseOverGlyphDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(MouseOverGlyph), "#FF212121".ToBrush());
-        public Brush MouseOverGlyph { get => (Brush)GetValue(MouseOverGlyphDP); set => SetValue(MouseOverGlyphDP, value); }
+        public static readonly DependencyProperty MouseOverGlyphProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(MouseOverGlyph), "#FF212121".ToBrush());
+        public Brush MouseOverGlyph { get => (Brush)GetValue(MouseOverGlyphProperty); set => SetValue(MouseOverGlyphProperty, value); }
 
-        public static readonly DependencyProperty PressedGlyphDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(PressedGlyph), "#FF212121".ToBrush());
-        public Brush PressedGlyph { get => (Brush)GetValue(PressedGlyphDP); set => SetValue(PressedGlyphDP, value); }
+        public static readonly DependencyProperty PressedGlyphProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(PressedGlyph), "#FF212121".ToBrush());
+        public Brush PressedGlyph { get => (Brush)GetValue(PressedGlyphProperty); set => SetValue(PressedGlyphProperty, value); }
 
-        public static readonly DependencyProperty DisabledGlyphDP = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(DisabledGlyph), "#FF707070".ToBrush());
-        public Brush DisabledGlyph { get => (Brush)GetValue(DisabledGlyphDP); set => SetValue(DisabledGlyphDP, value); }
+        public static readonly DependencyProperty DisabledGlyphProperty = DependencyExt.RegisterDependencyProperty<CheckBox, Brush>(nameof(DisabledGlyph), "#FF707070".ToBrush());
+        public Brush DisabledGlyph { get => (Brush)GetValue(DisabledGlyphProperty); set => SetValue(DisabledGlyphProperty, value); }
         #endregion
 
         #region I wish multi-inheritance was a thing.

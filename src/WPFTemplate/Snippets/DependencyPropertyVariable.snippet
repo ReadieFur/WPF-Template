@@ -7,8 +7,8 @@
         </Header>
         <Snippet>
             <Code Language="CSharp">
-                <![CDATA[public static readonly DependencyProperty $PropertyName$DP = DependencyExt.RegisterDependencyProperty<$ContainingType$, $Type$>(nameof($PropertyName$), $DefaultValue$);
-                public $Type$ $PropertyName$ { get => ($Type$)GetValue($PropertyName$DP); set => SetValue($PropertyName$DP, value); }]]>
+                <![CDATA[public static readonly DependencyProperty $PropertyName$Property = DependencyExt.RegisterDependencyProperty<$ContainingType$, $Type$>(nameof($PropertyName$), $DefaultValue$);
+                public $Type$ $PropertyName$ { get => ($Type$)GetValue($PropertyName$Property); set => SetValue($PropertyName$Property, value); }]]>
             </Code>
         <Declarations>
           <Literal>

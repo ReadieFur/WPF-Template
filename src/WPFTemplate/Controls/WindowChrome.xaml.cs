@@ -8,7 +8,6 @@ using System.Windows.Media;
 using WPFTemplate.Attributes;
 using WPFTemplate.Extensions;
 using WPFTemplate.Interfaces;
-using WPFTemplate.Styles;
 using Shell = System.Windows.Shell;
 
 namespace WPFTemplate.Controls
@@ -30,20 +29,20 @@ namespace WPFTemplate.Controls
 
         #region Binding
         //Initial values are set in the constructor.
-        public static readonly DependencyProperty BackgroundDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Background), "Transparent".ToBrush());
-        new public Brush Background { get => (Brush)GetValue(BackgroundDP); set => SetValue(BackgroundDP, value); }
+        /*public static readonly DependencyProperty BackgroundProperty = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Background), "Transparent".ToBrush());
+        new public Brush Background { get => (Brush)GetValue(BackgroundProperty); set => SetValue(BackgroundProperty, value); }
 
-        public static readonly DependencyProperty BorderBrushDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(BorderBrush), "Transparent".ToBrush());
-        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushDP); set => SetValue(BorderBrushDP, value); }
+        public static readonly DependencyProperty BorderBrushProperty = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(BorderBrush), "Transparent".ToBrush());
+        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushProperty); set => SetValue(BorderBrushProperty, value); }
 
-        public static readonly DependencyProperty ForegroundDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Foreground), "Transparent".ToBrush());
-        new public Brush Foreground { get => (Brush)GetValue(ForegroundDP); set => SetValue(ForegroundDP, value); }
+        public static readonly DependencyProperty ForegroundProperty = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Foreground), "Transparent".ToBrush());
+        new public Brush Foreground { get => (Brush)GetValue(ForegroundProperty); set => SetValue(ForegroundProperty, value); }*/
 
-        public static readonly DependencyProperty BackgroundAltDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(BackgroundAlt), "Transparent".ToBrush());
-        public Brush BackgroundAlt { get => (Brush)GetValue(BackgroundAltDP); set => SetValue(BackgroundAltDP, value); }
+        public static readonly DependencyProperty BackgroundAltProperty = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(BackgroundAlt), "Transparent".ToBrush());
+        public Brush BackgroundAlt { get => (Brush)GetValue(BackgroundAltProperty); set => SetValue(BackgroundAltProperty, value); }
 
-        public static readonly DependencyProperty AccentDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Accent), "Transparent".ToBrush());
-        public Brush Accent { get => (Brush)GetValue(AccentDP); set => SetValue(AccentDP, value); }
+        public static readonly DependencyProperty AccentProperty = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Accent), "Transparent".ToBrush());
+        public Brush Accent { get => (Brush)GetValue(AccentProperty); set => SetValue(AccentProperty, value); }
         #endregion
 
         #region Template properties
@@ -66,8 +65,8 @@ namespace WPFTemplate.Controls
         #endregion
 
         #region New base properties
-        public static readonly DependencyProperty TemplateDP = DependencyExt.RegisterDependencyProperty<WindowChrome, ControlTemplate>(nameof(Template), BASE_TEMPLATE);
-        new public ControlTemplate Template { get => (ControlTemplate)GetValue(TemplateDP); set => SetValue(TemplateDP, value); }
+        public static readonly DependencyProperty TemplateProperty = DependencyExt.RegisterDependencyProperty<WindowChrome, ControlTemplate>(nameof(Template), BASE_TEMPLATE);
+        new public ControlTemplate Template { get => (ControlTemplate)GetValue(TemplateProperty); set => SetValue(TemplateProperty, value); }
 
         new public ResizeMode ResizeMode
         {
@@ -96,7 +95,7 @@ namespace WPFTemplate.Controls
         }
         #endregion
 
-        private WindowState previousWindowState;
+        protected WindowState previousWindowState;
         protected Shell.WindowChrome windowChrome { get; private init; } = new();
 
         public WindowChrome()

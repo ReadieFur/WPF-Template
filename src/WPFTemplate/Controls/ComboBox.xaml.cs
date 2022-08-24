@@ -6,95 +6,95 @@ namespace WPFTemplate.Controls
 {
 	public class ComboBox : System.Windows.Controls.ComboBox
 	{
-        /*public static readonly DependencyProperty BackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(Background), "#FFFFFFFF".ToBrush());
-		new public Brush Background { get => (Brush)GetValue(BackgroundDP); set => SetValue(BackgroundDP, value); }
+        /*public static readonly DependencyProperty BackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(Background), "#FFFFFFFF".ToBrush());
+		new public Brush Background { get => (Brush)GetValue(BackgroundProperty); set => SetValue(BackgroundProperty, value); }
 
-        public static readonly DependencyProperty BorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(BorderBrush), "#FFACACAC".ToBrush());
-        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushDP); set => SetValue(BorderBrushDP, value); }
+        public static readonly DependencyProperty BorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(BorderBrush), "#FFACACAC".ToBrush());
+        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushProperty); set => SetValue(BorderBrushProperty, value); }
 
-        public static readonly DependencyProperty ForegroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(Foreground), "#00000000".ToBrush());
-		new public Brush Foreground { get => (Brush)GetValue(ForegroundDP); set => SetValue(ForegroundDP, value); }*/
+        public static readonly DependencyProperty ForegroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(Foreground), "#00000000".ToBrush());
+		new public Brush Foreground { get => (Brush)GetValue(ForegroundProperty); set => SetValue(ForegroundProperty, value); }*/
 
-		public static readonly DependencyProperty StaticGlyphDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticGlyph), "#FF606060".ToBrush());
-		public Brush StaticGlyph { get => (Brush)GetValue(StaticGlyphDP); set => SetValue(StaticGlyphDP, value); }
+		public static readonly DependencyProperty StaticGlyphProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticGlyph), "#FF606060".ToBrush());
+		public Brush StaticGlyph { get => (Brush)GetValue(StaticGlyphProperty); set => SetValue(StaticGlyphProperty, value); }
 
-		public static readonly DependencyProperty StaticEditableBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableBackground), "#FFFFFFFF".ToBrush());
-		public Brush StaticEditableBackground { get => (Brush)GetValue(StaticEditableBackgroundDP); set => SetValue(StaticEditableBackgroundDP, value); }
+		public static readonly DependencyProperty StaticEditableBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableBackground), "#FFFFFFFF".ToBrush());
+		public Brush StaticEditableBackground { get => (Brush)GetValue(StaticEditableBackgroundProperty); set => SetValue(StaticEditableBackgroundProperty, value); }
 
-		public static readonly DependencyProperty StaticEditableBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableBorderBrush), "#FFABADB3".ToBrush());
-		public Brush StaticEditableBorderBrush { get => (Brush)GetValue(StaticEditableBorderBrushDP); set => SetValue(StaticEditableBorderBrushDP, value); }
+		public static readonly DependencyProperty StaticEditableBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableBorderBrush), "#FFABADB3".ToBrush());
+		public Brush StaticEditableBorderBrush { get => (Brush)GetValue(StaticEditableBorderBrushProperty); set => SetValue(StaticEditableBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty StaticEditableButtonBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableButtonBackground), "Transparent".ToBrush());
-		public Brush StaticEditableButtonBackground { get => (Brush)GetValue(StaticEditableButtonBackgroundDP); set => SetValue(StaticEditableButtonBackgroundDP, value); }
+		public static readonly DependencyProperty StaticEditableButtonBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableButtonBackground), "Transparent".ToBrush());
+		public Brush StaticEditableButtonBackground { get => (Brush)GetValue(StaticEditableButtonBackgroundProperty); set => SetValue(StaticEditableButtonBackgroundProperty, value); }
 
-		public static readonly DependencyProperty StaticEditableButtonBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableButtonBorderBrush), "Transparent".ToBrush());
-		public Brush StaticEditableButtonBorderBrush { get => (Brush)GetValue(StaticEditableButtonBorderBrushDP); set => SetValue(StaticEditableButtonBorderBrushDP, value); }
+		public static readonly DependencyProperty StaticEditableButtonBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(StaticEditableButtonBorderBrush), "Transparent".ToBrush());
+		public Brush StaticEditableButtonBorderBrush { get => (Brush)GetValue(StaticEditableButtonBorderBrushProperty); set => SetValue(StaticEditableButtonBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty MouseOverBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverBorderBrush), "#FF7EB4EA".ToBrush());
-		public Brush MouseOverBorderBrush { get => (Brush)GetValue(MouseOverBorderBrushDP); set => SetValue(MouseOverBorderBrushDP, value); }
+		public static readonly DependencyProperty MouseOverBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverBorderBrush), "#FF7EB4EA".ToBrush());
+		public Brush MouseOverBorderBrush { get => (Brush)GetValue(MouseOverBorderBrushProperty); set => SetValue(MouseOverBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty MouseOverGlyphDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverGlyph), "#FF000000".ToBrush());
-		public Brush MouseOverGlyph { get => (Brush)GetValue(MouseOverGlyphDP); set => SetValue(MouseOverGlyphDP, value); }
+		public static readonly DependencyProperty MouseOverGlyphProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverGlyph), "#FF000000".ToBrush());
+		public Brush MouseOverGlyph { get => (Brush)GetValue(MouseOverGlyphProperty); set => SetValue(MouseOverGlyphProperty, value); }
 
-		public static readonly DependencyProperty MouseOverEditableBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableBackground), "#FFFFFFFF".ToBrush());
-		public Brush MouseOverEditableBackground { get => (Brush)GetValue(MouseOverEditableBackgroundDP); set => SetValue(MouseOverEditableBackgroundDP, value); }
+		public static readonly DependencyProperty MouseOverEditableBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableBackground), "#FFFFFFFF".ToBrush());
+		public Brush MouseOverEditableBackground { get => (Brush)GetValue(MouseOverEditableBackgroundProperty); set => SetValue(MouseOverEditableBackgroundProperty, value); }
 
-		public static readonly DependencyProperty MouseOverEditableBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableBorderBrush), "#FF7EB4EA".ToBrush());
-		public Brush MouseOverEditableBorderBrush { get => (Brush)GetValue(MouseOverEditableBorderBrushDP); set => SetValue(MouseOverEditableBorderBrushDP, value); }
+		public static readonly DependencyProperty MouseOverEditableBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableBorderBrush), "#FF7EB4EA".ToBrush());
+		public Brush MouseOverEditableBorderBrush { get => (Brush)GetValue(MouseOverEditableBorderBrushProperty); set => SetValue(MouseOverEditableBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty MouseOverEditableButtonBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableButtonBorderBrush), "#FF7EB4EA".ToBrush());
-		public Brush MouseOverEditableButtonBorderBrush { get => (Brush)GetValue(MouseOverEditableButtonBorderBrushDP); set => SetValue(MouseOverEditableButtonBorderBrushDP, value); }
+		public static readonly DependencyProperty MouseOverEditableButtonBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableButtonBorderBrush), "#FF7EB4EA".ToBrush());
+		public Brush MouseOverEditableButtonBorderBrush { get => (Brush)GetValue(MouseOverEditableButtonBorderBrushProperty); set => SetValue(MouseOverEditableButtonBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty PressedBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedBorderBrush), "#FF569DE5".ToBrush());
-		public Brush PressedBorderBrush { get => (Brush)GetValue(PressedBorderBrushDP); set => SetValue(PressedBorderBrushDP, value); }
+		public static readonly DependencyProperty PressedBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedBorderBrush), "#FF569DE5".ToBrush());
+		public Brush PressedBorderBrush { get => (Brush)GetValue(PressedBorderBrushProperty); set => SetValue(PressedBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty PressedGlyphDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedGlyph), "#FF000000".ToBrush());
-		public Brush PressedGlyph { get => (Brush)GetValue(PressedGlyphDP); set => SetValue(PressedGlyphDP, value); }
+		public static readonly DependencyProperty PressedGlyphProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedGlyph), "#FF000000".ToBrush());
+		public Brush PressedGlyph { get => (Brush)GetValue(PressedGlyphProperty); set => SetValue(PressedGlyphProperty, value); }
 
-		public static readonly DependencyProperty PressedEditableBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableBackground), "#FFFFFFFF".ToBrush());
-		public Brush PressedEditableBackground { get => (Brush)GetValue(PressedEditableBackgroundDP); set => SetValue(PressedEditableBackgroundDP, value); }
+		public static readonly DependencyProperty PressedEditableBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableBackground), "#FFFFFFFF".ToBrush());
+		public Brush PressedEditableBackground { get => (Brush)GetValue(PressedEditableBackgroundProperty); set => SetValue(PressedEditableBackgroundProperty, value); }
 
-		public static readonly DependencyProperty PressedEditableBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableBorderBrush), "#FF569DE5".ToBrush());
-		public Brush PressedEditableBorderBrush { get => (Brush)GetValue(PressedEditableBorderBrushDP); set => SetValue(PressedEditableBorderBrushDP, value); }
+		public static readonly DependencyProperty PressedEditableBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableBorderBrush), "#FF569DE5".ToBrush());
+		public Brush PressedEditableBorderBrush { get => (Brush)GetValue(PressedEditableBorderBrushProperty); set => SetValue(PressedEditableBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty PressedEditableButtonBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableButtonBorderBrush), "#FF569DE5".ToBrush());
-		public Brush PressedEditableButtonBorderBrush { get => (Brush)GetValue(PressedEditableButtonBorderBrushDP); set => SetValue(PressedEditableButtonBorderBrushDP, value); }
+		public static readonly DependencyProperty PressedEditableButtonBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableButtonBorderBrush), "#FF569DE5".ToBrush());
+		public Brush PressedEditableButtonBorderBrush { get => (Brush)GetValue(PressedEditableButtonBorderBrushProperty); set => SetValue(PressedEditableButtonBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty DisabledBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledBackground), "#FFF0F0F0".ToBrush());
-		public Brush DisabledBackground { get => (Brush)GetValue(DisabledBackgroundDP); set => SetValue(DisabledBackgroundDP, value); }
+		public static readonly DependencyProperty DisabledBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledBackground), "#FFF0F0F0".ToBrush());
+		public Brush DisabledBackground { get => (Brush)GetValue(DisabledBackgroundProperty); set => SetValue(DisabledBackgroundProperty, value); }
 
-		public static readonly DependencyProperty DisabledBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledBorderBrush), "#FFD9D9D9".ToBrush());
-		public Brush DisabledBorderBrush { get => (Brush)GetValue(DisabledBorderBrushDP); set => SetValue(DisabledBorderBrushDP, value); }
+		public static readonly DependencyProperty DisabledBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledBorderBrush), "#FFD9D9D9".ToBrush());
+		public Brush DisabledBorderBrush { get => (Brush)GetValue(DisabledBorderBrushProperty); set => SetValue(DisabledBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty DisabledGlyphDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledGlyph), "#FFBFBFBF".ToBrush());
-		public Brush DisabledGlyph { get => (Brush)GetValue(DisabledGlyphDP); set => SetValue(DisabledGlyphDP, value); }
+		public static readonly DependencyProperty DisabledGlyphProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledGlyph), "#FFBFBFBF".ToBrush());
+		public Brush DisabledGlyph { get => (Brush)GetValue(DisabledGlyphProperty); set => SetValue(DisabledGlyphProperty, value); }
 
-		public static readonly DependencyProperty DisabledEditableBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableBackground), "#FFFFFFFF".ToBrush());
-		public Brush DisabledEditableBackground { get => (Brush)GetValue(DisabledEditableBackgroundDP); set => SetValue(DisabledEditableBackgroundDP, value); }
+		public static readonly DependencyProperty DisabledEditableBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableBackground), "#FFFFFFFF".ToBrush());
+		public Brush DisabledEditableBackground { get => (Brush)GetValue(DisabledEditableBackgroundProperty); set => SetValue(DisabledEditableBackgroundProperty, value); }
 
-		public static readonly DependencyProperty DisabledEditableBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableBorderBrush), "#FFBFBFBF".ToBrush());
-		public Brush DisabledEditableBorderBrush { get => (Brush)GetValue(DisabledEditableBorderBrushDP); set => SetValue(DisabledEditableBorderBrushDP, value); }
+		public static readonly DependencyProperty DisabledEditableBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableBorderBrush), "#FFBFBFBF".ToBrush());
+		public Brush DisabledEditableBorderBrush { get => (Brush)GetValue(DisabledEditableBorderBrushProperty); set => SetValue(DisabledEditableBorderBrushProperty, value); }
 
-		public static readonly DependencyProperty DisabledEditableButtonBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableButtonBackground), "Transparent".ToBrush());
-		public Brush DisabledEditableButtonBackground { get => (Brush)GetValue(DisabledEditableButtonBackgroundDP); set => SetValue(DisabledEditableButtonBackgroundDP, value); }
+		public static readonly DependencyProperty DisabledEditableButtonBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableButtonBackground), "Transparent".ToBrush());
+		public Brush DisabledEditableButtonBackground { get => (Brush)GetValue(DisabledEditableButtonBackgroundProperty); set => SetValue(DisabledEditableButtonBackgroundProperty, value); }
 
-		public static readonly DependencyProperty DisabledEditableButtonBorderBrushDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableButtonBorderBrush), "Transparent".ToBrush());
-		public Brush DisabledEditableButtonBorderBrush { get => (Brush)GetValue(DisabledEditableButtonBorderBrushDP); set => SetValue(DisabledEditableButtonBorderBrushDP, value); }
+		public static readonly DependencyProperty DisabledEditableButtonBorderBrushProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(DisabledEditableButtonBorderBrush), "Transparent".ToBrush());
+		public Brush DisabledEditableButtonBorderBrush { get => (Brush)GetValue(DisabledEditableButtonBorderBrushProperty); set => SetValue(DisabledEditableButtonBorderBrushProperty, value); }
         
-		public static readonly DependencyProperty MouseOverBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverBackground), new LinearGradientBrush("#FFECF4FC".ToColor(), "#FFDCECFC".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/));
-		public Brush MouseOverBackground { get => (Brush)GetValue(MouseOverBackgroundDP); set => SetValue(MouseOverBackgroundDP, value); }
+		public static readonly DependencyProperty MouseOverBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverBackground), new LinearGradientBrush("#FFECF4FC".ToColor(), "#FFDCECFC".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/));
+		public Brush MouseOverBackground { get => (Brush)GetValue(MouseOverBackgroundProperty); set => SetValue(MouseOverBackgroundProperty, value); }
 
-		public static readonly DependencyProperty MouseOverEditableButtonBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableButtonBackground), new LinearGradientBrush("#FFEBF4FC".ToColor(), "#FFDCECFC".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/) /*MANUAL*/);
-		public Brush MouseOverEditableButtonBackground { get => (Brush)GetValue(MouseOverEditableButtonBackgroundDP); set => SetValue(MouseOverEditableButtonBackgroundDP, value); }
+		public static readonly DependencyProperty MouseOverEditableButtonBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(MouseOverEditableButtonBackground), new LinearGradientBrush("#FFEBF4FC".ToColor(), "#FFDCECFC".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/) /*MANUAL*/);
+		public Brush MouseOverEditableButtonBackground { get => (Brush)GetValue(MouseOverEditableButtonBackgroundProperty); set => SetValue(MouseOverEditableButtonBackgroundProperty, value); }
 
-		public static readonly DependencyProperty PressedBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedBackground), new LinearGradientBrush("#FFF0F0F0".ToColor(), "#FFE5E5E5".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/) /*MANUAL*/);
-		public Brush PressedBackground { get => (Brush)GetValue(PressedBackgroundDP); set => SetValue(PressedBackgroundDP, value); }
+		public static readonly DependencyProperty PressedBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedBackground), new LinearGradientBrush("#FFF0F0F0".ToColor(), "#FFE5E5E5".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/) /*MANUAL*/);
+		public Brush PressedBackground { get => (Brush)GetValue(PressedBackgroundProperty); set => SetValue(PressedBackgroundProperty, value); }
 
-		public static readonly DependencyProperty PressedEditableButtonBackgroundDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableButtonBackground), new LinearGradientBrush("#FFDAECFC".ToColor(), "#FFC4E0FC".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/) /*MANUAL*/);
-		public Brush PressedEditableButtonBackground { get => (Brush)GetValue(PressedEditableButtonBackgroundDP); set => SetValue(PressedEditableButtonBackgroundDP, value); }
+		public static readonly DependencyProperty PressedEditableButtonBackgroundProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(PressedEditableButtonBackground), new LinearGradientBrush("#FFDAECFC".ToColor(), "#FFC4E0FC".ToColor(), new(0, 1), new(1, 0) /*MANUAL*/) /*MANUAL*/);
+		public Brush PressedEditableButtonBackground { get => (Brush)GetValue(PressedEditableButtonBackgroundProperty); set => SetValue(PressedEditableButtonBackgroundProperty, value); }
 
-        public static readonly DependencyProperty GlyphDP = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(Glyph), "#FF606060".ToBrush());
-		public Brush Glyph { get => (Brush)GetValue(GlyphDP); set => SetValue(GlyphDP, value); }
+        public static readonly DependencyProperty GlyphProperty = DependencyExt.RegisterDependencyProperty<ComboBox, Brush>(nameof(Glyph), "#FF606060".ToBrush());
+		public Brush Glyph { get => (Brush)GetValue(GlyphProperty); set => SetValue(GlyphProperty, value); }
 
 		public static readonly ResourceDictionary RESOURCES = ResourceDictionaryExt.LoadControlResourceDictionary<ComboBox>();
 		public static readonly Style BASE_STYLE = RESOURCES.GetResource<Style>(nameof(ComboBox));
