@@ -5,6 +5,8 @@ Todo:
         - https://github.com/ghost1372/HandyControls/commit/41fce1df04b45ab9a7a8ebad33f3810a89a1ad13
     ☐ Blurred window.
     ☐ Detect when the window is aero snapped and remove the border corner radius.
+    Low priority:
+        ☐ Update (JS) XAML converter to parse linear gradient brushes.
 
 In-progress:
 
