@@ -121,6 +121,19 @@
             PressedArrowStroke="{Binding foreground, ElementName=Styles}">
             <Label Content="Label" Foreground="{Binding foreground, ElementName=Styles}"/>
         </templateControls:Expander>
+        <templateControls:ListBox
+            Background="Transparent"
+            BorderBrush="Transparent">
+            <templateControls:ListBoxItem
+                MouseOverBackground="{Binding backgroundAlt, ElementName=Styles}"
+                MouseOverBorderBrush="Transparent"
+                SelectedActiveBackground="{Binding accent, ElementName=Styles}"
+                SelectedActiveBorderBrush="{Binding accent, ElementName=Styles}"
+                SelectedInactiveBackground="{Binding accent, ElementName=Styles}"
+                SelectedInactiveBorderBrush="{Binding accent, ElementName=Styles}">
+                <Label Content="ListBoxItem" Foreground="{Binding foreground, ElementName=Styles}"/>
+            </templateControls:ListBoxItem>
+        </templateControls:ListBox>
         <!--<templateControls:ListView HorizontalAlignment="Left" Height="81.08" Margin="0,105.92,0,0" VerticalAlignment="Top" Width="240">
             <templateControls:ListView.View>
                 <GridView>
