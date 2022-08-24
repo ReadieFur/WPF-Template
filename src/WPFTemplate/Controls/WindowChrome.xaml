@@ -31,8 +31,8 @@
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
                             <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"/>
-                            <Setter Property="HoverBorderBrush" Value="Transparent"/>
-                            <Setter Property="HoverForeground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"/>
+                            <Setter Property="MouseOverBorderBrush" Value="Transparent"/>
+                            <Setter Property="MouseOverForeground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"/>
                             <Setter Property="PressedBorderBrush" Value="Transparent"/>
                             <Setter Property="PressedForeground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=Foreground}"/>
                             <Setter Property="Margin" Value="{Binding Source={x:Static extensions:SystemParametersExt.instance}, Path=FocusBorderThicknessSides}"/>
@@ -43,13 +43,13 @@
                         </Style>
                     </StackPanel.Resources>
                     <local:Button x:Name="minimiseButton" Content="&#xE921;"
-                        HoverBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"
+                        MouseOverBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"
                         PressedBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"/>
                     <local:Button x:Name="resizeButton" Content="&#xE922;"
-                        HoverBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"
+                        MouseOverBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"
                         PressedBackground="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:WindowChrome}}, Path=BackgroundAlt}"/>
                     <local:Button x:Name="closeButton" Content="&#xE8BB;"
-                        HoverBackground="OrangeRed"
+                        MouseOverBackground="OrangeRed"
                         PressedBackground="Red"/>
                 </StackPanel>
             </Grid>

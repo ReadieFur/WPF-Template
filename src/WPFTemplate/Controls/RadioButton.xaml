@@ -46,9 +46,9 @@
                             <Setter Property="Padding" Value="4,-1,0,0"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:RadioButton}}, Path=HoverBackground}"/>
-                            <Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:RadioButton}}, Path=HoverBorderBrush}"/>
-                            <Setter Property="Fill" TargetName="optionMark" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:RadioButton}}, Path=HoverGlyph}"/>
+                            <Setter Property="Background" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:RadioButton}}, Path=MouseOverBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:RadioButton}}, Path=MouseOverBorderBrush}"/>
+                            <Setter Property="Fill" TargetName="optionMark" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:RadioButton}}, Path=MouseOverGlyph}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:RadioButton}}, Path=DisabledBackground}"/>

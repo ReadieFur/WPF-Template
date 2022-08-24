@@ -6,9 +6,18 @@ namespace WPFTemplate.Controls
 {
     public class ListViewItem : System.Windows.Controls.ListViewItem
     {
+        public static readonly DependencyProperty BackgroundDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(Background), "#FFFFFFFF".ToBrush());
+        new public Brush Background { get => (Brush)GetValue(BackgroundDP); set => SetValue(BackgroundDP, value); }
+
+        public static readonly DependencyProperty BorderBrushDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(BorderBrush), "#FFABADB3".ToBrush());
+        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushDP); set => SetValue(BorderBrushDP, value); }
+
+        public static readonly DependencyProperty ForegroundDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(Foreground), "#00000000".ToBrush());
+        new public Brush Foreground { get => (Brush)GetValue(ForegroundDP); set => SetValue(ForegroundDP, value); }
+
         #region Background
-        public static readonly DependencyProperty HoverBackgroundDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(HoverBackground), "#1F26A0DA".ToBrush());
-        public Brush HoverBackground { get => (Brush)GetValue(HoverBackgroundDP); set => SetValue(HoverBackgroundDP, value); }
+        public static readonly DependencyProperty MouseOverBackgroundDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(MouseOverBackground), "#1F26A0DA".ToBrush());
+        public Brush MouseOverBackground { get => (Brush)GetValue(MouseOverBackgroundDP); set => SetValue(MouseOverBackgroundDP, value); }
 
         public static readonly DependencyProperty ActiveBackgroundDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(ActiveBackground), "#3D26A0DA".ToBrush());
         public Brush ActiveBackground { get => (Brush)GetValue(ActiveBackgroundDP); set => SetValue(ActiveBackgroundDP, value); }
@@ -18,8 +27,8 @@ namespace WPFTemplate.Controls
         #endregion
 
         #region Border
-        public static readonly DependencyProperty HoverBorderBrushDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(HoverBorderBrush), "#A826A0DA".ToBrush());
-        public Brush HoverBorderBrush { get => (Brush)GetValue(HoverBorderBrushDP); set => SetValue(HoverBorderBrushDP, value); }
+        public static readonly DependencyProperty MouseOverBorderBrushDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(MouseOverBorderBrush), "#A826A0DA".ToBrush());
+        public Brush MouseOverBorderBrush { get => (Brush)GetValue(MouseOverBorderBrushDP); set => SetValue(MouseOverBorderBrushDP, value); }
 
         public static readonly DependencyProperty ActiveBorderBrushDP = DependencyExt.RegisterDependencyProperty<ListViewItem, Brush>(nameof(ActiveBorderBrush), "#FF26A0DA".ToBrush());
         public Brush ActiveBorderBrush { get => (Brush)GetValue(ActiveBorderBrushDP); set => SetValue(ActiveBorderBrushDP, value); }

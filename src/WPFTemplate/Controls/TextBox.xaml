@@ -23,7 +23,7 @@
                             <Setter Property="Opacity" TargetName="border" Value="0.56"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:TextBox}}, Path=HoverBorderBrush}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:TextBox}}, Path=MouseOverBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:TextBox}}, Path=FocusBorderBrush}"/>

@@ -26,7 +26,7 @@
                                 </Border>
                             </Grid>
                         </Border>
-                        <Border x:Name="HeaderHoverBorder" BorderThickness="1,0,1,1" Margin="1,1,0,0"/>
+                        <Border x:Name="HeaderMouseOverBorder" BorderThickness="1,0,1,1" Margin="1,1,0,0"/>
                         <Border x:Name="HeaderPressBorder" BorderThickness="1,1,1,0" Margin="1,0,0,1"/>
                         <Canvas>
                             <Thumb x:Name="PART_HeaderGripper"/>
@@ -34,7 +34,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="HeaderBorder" Value="{Binding RelativeSource={RelativeSource Self}, Path=HoverBackground}"/>
+                            <Setter Property="Background" TargetName="HeaderBorder" Value="{Binding RelativeSource={RelativeSource Self}, Path=MouseOverBackground}"/>
                             <Setter Property="Background" TargetName="PART_HeaderGripper" Value="Transparent"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">

@@ -47,10 +47,10 @@
                             <Setter Property="Padding" Value="4,-1,0,0"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="checkBoxBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=HoverBackground}"/>
-                            <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=HoverBorderBrush}"/>
-                            <Setter Property="Fill" TargetName="optionMark" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=HoverGlyph}"/>
-                            <Setter Property="Fill" TargetName="indeterminateMark" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=HoverGlyph}"/>
+                            <Setter Property="Background" TargetName="checkBoxBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=MouseOverBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=MouseOverBorderBrush}"/>
+                            <Setter Property="Fill" TargetName="optionMark" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=MouseOverGlyph}"/>
+                            <Setter Property="Fill" TargetName="indeterminateMark" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=MouseOverGlyph}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="checkBoxBorder" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:CheckBox}}, Path=DisabledBackground}"/>

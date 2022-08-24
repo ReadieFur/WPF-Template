@@ -6,9 +6,18 @@ namespace WPFTemplate.Controls
 {
     public class TextBox : System.Windows.Controls.TextBox
     {
+        public static readonly DependencyProperty BackgroundDP = DependencyExt.RegisterDependencyProperty<TextBox, Brush>(nameof(Background), "#FFFFFFFF".ToBrush());
+        new public Brush Background { get => (Brush)GetValue(BackgroundDP); set => SetValue(BackgroundDP, value); }
+
+        public static readonly DependencyProperty BorderBrushDP = DependencyExt.RegisterDependencyProperty<TextBox, Brush>(nameof(BorderBrush), "#FFABAdB3".ToBrush());
+        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushDP); set => SetValue(BorderBrushDP, value); }
+
+        public static readonly DependencyProperty ForegroundDP = DependencyExt.RegisterDependencyProperty<TextBox, Brush>(nameof(Foreground), "#00000000".ToBrush());
+        new public Brush Foreground { get => (Brush)GetValue(ForegroundDP); set => SetValue(ForegroundDP, value); }
+
         #region Border
-        public static readonly DependencyProperty HoverBorderBrushDP = DependencyExt.RegisterDependencyProperty<TextBox, Brush>(nameof(HoverBorderBrush), "#FF7EB4EA".ToBrush());
-        public Brush HoverBorderBrush { get => (Brush)GetValue(HoverBorderBrushDP); set => SetValue(HoverBorderBrushDP, value); }
+        public static readonly DependencyProperty MouseOverBorderBrushDP = DependencyExt.RegisterDependencyProperty<TextBox, Brush>(nameof(MouseOverBorderBrush), "#FF7EB4EA".ToBrush());
+        public Brush MouseOverBorderBrush { get => (Brush)GetValue(MouseOverBorderBrushDP); set => SetValue(MouseOverBorderBrushDP, value); }
 
         public static readonly DependencyProperty FocusBorderBrushDP = DependencyExt.RegisterDependencyProperty<TextBox, Brush>(nameof(FocusBorderBrush), "#FF569DE5".ToBrush());
         public Brush FocusBorderBrush { get => (Brush)GetValue(FocusBorderBrushDP); set => SetValue(FocusBorderBrushDP, value); }

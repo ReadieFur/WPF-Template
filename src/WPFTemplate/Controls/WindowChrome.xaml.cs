@@ -30,6 +30,15 @@ namespace WPFTemplate.Controls
 
         #region Binding
         //Initial values are set in the constructor.
+        public static readonly DependencyProperty BackgroundDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Background), "Transparent".ToBrush());
+        new public Brush Background { get => (Brush)GetValue(BackgroundDP); set => SetValue(BackgroundDP, value); }
+
+        public static readonly DependencyProperty BorderBrushDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(BorderBrush), "Transparent".ToBrush());
+        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushDP); set => SetValue(BorderBrushDP, value); }
+
+        public static readonly DependencyProperty ForegroundDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(Foreground), "Transparent".ToBrush());
+        new public Brush Foreground { get => (Brush)GetValue(ForegroundDP); set => SetValue(ForegroundDP, value); }
+
         public static readonly DependencyProperty BackgroundAltDP = DependencyExt.RegisterDependencyProperty<WindowChrome, Brush>(nameof(BackgroundAlt), "Transparent".ToBrush());
         public Brush BackgroundAlt { get => (Brush)GetValue(BackgroundAltDP); set => SetValue(BackgroundAltDP, value); }
 

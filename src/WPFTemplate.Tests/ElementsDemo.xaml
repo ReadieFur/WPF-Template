@@ -27,9 +27,9 @@
             Background="{Binding backgroundAlt, ElementName=Styles}"
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
-            HoverBackground="{Binding background, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
-            HoverForeground="{Binding foreground, ElementName=Styles}"
+            MouseOverBackground="{Binding background, ElementName=Styles}"
+            MouseOverBorderBrush="{Binding accent, ElementName=Styles}"
+            MouseOverForeground="{Binding foreground, ElementName=Styles}"
             PressedBackground="{Binding accent, ElementName=Styles}"
             PressedBorderBrush="{Binding accent, ElementName=Styles}"
             PressedForeground="{Binding foreground, ElementName=Styles}"/>
@@ -38,7 +38,7 @@
             Background="{Binding backgroundAlt, ElementName=Styles}"
             BorderBrush="{Binding background, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
+            MouseOverBorderBrush="{Binding accent, ElementName=Styles}"
             FocusBorderBrush="{Binding accent, ElementName=Styles}"
             SelectionBrush="{Binding accent, ElementName=Styles}"
             CaretBrush="{Binding foreground, ElementName=Styles}"/>
@@ -47,8 +47,8 @@
             Background="{Binding background, ElementName=Styles}"
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
-            HoverBackground="{Binding foreground, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
+            MouseOverBackground="{Binding foreground, ElementName=Styles}"
+            MouseOverBorderBrush="{Binding accent, ElementName=Styles}"
             PressedBackground="{Binding accent, ElementName=Styles}"
             PressedBorderBrush="{Binding accent, ElementName=Styles}"
             TrackBackground="{Binding backgroundAlt, ElementName=Styles}"
@@ -59,9 +59,9 @@
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
             Glyph="{Binding accent, ElementName=Styles}"
-            HoverBackground="{Binding backgroundAlt, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
-            HoverGlyph="{Binding accent, ElementName=Styles}"
+            MouseOverBackground="{Binding backgroundAlt, ElementName=Styles}"
+            MouseOverBorderBrush="{Binding accent, ElementName=Styles}"
+            MouseOverGlyph="{Binding accent, ElementName=Styles}"
             PressedBackground="{Binding accent, ElementName=Styles}"
             PressedGlyph="{Binding accent, ElementName=Styles}"/>
         <templateControls:CheckBox Margin="{StaticResource ItemMargin}"
@@ -70,11 +70,42 @@
             BorderBrush="{Binding accent, ElementName=Styles}"
             Foreground="{Binding foreground, ElementName=Styles}"
             Glyph="{Binding accent, ElementName=Styles}"
-            HoverBackground="{Binding backgroundAlt, ElementName=Styles}"
-            HoverBorderBrush="{Binding accent, ElementName=Styles}"
-            HoverGlyph="{Binding accent, ElementName=Styles}"
+            MouseOverBackground="{Binding backgroundAlt, ElementName=Styles}"
+            MouseOverBorderBrush="{Binding accent, ElementName=Styles}"
+            MouseOverGlyph="{Binding accent, ElementName=Styles}"
             PressedBackground="{Binding accent, ElementName=Styles}"
+            PressedBorderBrush="{Binding accent, ElementName=Styles}"
             PressedGlyph="{Binding accent, ElementName=Styles}"/>
+        <templateControls:ComboBox Margin="{StaticResource ItemMargin}"
+            Background="{Binding backgroundAlt, ElementName=Styles}"
+            BorderBrush="{Binding accent, ElementName=Styles}"
+            Foreground="{Binding foreground, ElementName=Styles}"
+            Glyph="{Binding accent, ElementName=Styles}"
+            MouseOverBackground="{Binding backgroundAlt, ElementName=Styles}"
+            MouseOverBorderBrush="{Binding accent, ElementName=Styles}"
+            MouseOverGlyph="{Binding accent, ElementName=Styles}"
+            PressedBackground="{Binding accent, ElementName=Styles}"
+            PressedBorderBrush="{Binding accent, ElementName=Styles}"
+            PressedGlyph="{Binding accent, ElementName=Styles}">
+            <templateControls:ComboBox.Resources>
+                <Style TargetType="{x:Type templateControls:ComboBoxItem}"
+                    BasedOn="{x:Static templateControls:ComboBoxItem.BASE_STYLE}">
+                    <Setter Property="Background" Value="{Binding backgroundAlt, ElementName=Styles}"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Foreground" Value="{Binding foreground, ElementName=Styles}"/>
+                    <Setter Property="ItemsviewHoverBackground" Value="{Binding accent, ElementName=Styles}"/>
+                    <Setter Property="ItemsviewSelectedBackground" Value="{Binding accent, ElementName=Styles}"/>
+                    <Setter Property="ItemsviewSelectedHoverBackground" Value="{Binding accent, ElementName=Styles}"/>
+                    <Setter Property="ItemsviewSelectedNoFocusBackground" Value="{Binding accent, ElementName=Styles}"/>
+                    <Setter Property="ItemsviewHoverFocusBackground" Value="{Binding background, ElementName=Styles}"/>
+                </Style>
+            </templateControls:ComboBox.Resources>
+            <ComboBox.Items>
+                <templateControls:ComboBoxItem Content="Item 1"/>
+                <templateControls:ComboBoxItem Content="Item 2"/>
+            </ComboBox.Items>
+        </templateControls:ComboBox>
         <!--<templateControls:ListView HorizontalAlignment="Left" Height="81.08" Margin="0,105.92,0,0" VerticalAlignment="Top" Width="240">
             <templateControls:ListView.View>
                 <GridView>

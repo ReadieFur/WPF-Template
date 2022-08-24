@@ -30,9 +30,9 @@
                             <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource Self}, Path=PressedBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=HoverForeground}"/>
-                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=HoverBackground}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=HoverBorderBrush}"/>
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=MouseOverForeground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=MouseOverBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:Button}}, Path=MouseOverBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=PressedForeground}"/>

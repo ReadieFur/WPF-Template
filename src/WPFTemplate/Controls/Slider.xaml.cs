@@ -6,9 +6,18 @@ namespace WPFTemplate.Controls
 {
     public class Slider : System.Windows.Controls.Slider
     {
+        public static readonly DependencyProperty BackgroundDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(Background), "#FFF0F0F0".ToBrush());
+        new public Brush Background { get => (Brush)GetValue(BackgroundDP); set => SetValue(BackgroundDP, value); }
+
+        public static readonly DependencyProperty BorderBrushDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(BorderBrush), "#FFACACAC".ToBrush());
+        new public Brush BorderBrush { get => (Brush)GetValue(BorderBrushDP); set => SetValue(BorderBrushDP, value); }
+
+        public static readonly DependencyProperty ForegroundDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(Foreground), "#FFE5E5E5".ToBrush());
+        new public Brush Foreground { get => (Brush)GetValue(ForegroundDP); set => SetValue(ForegroundDP, value); }
+
         #region Background
-        public static readonly DependencyProperty HoverBackgroundDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(HoverBackground), "#FFDCECFC".ToBrush());
-        public Brush HoverBackground { get => (Brush)GetValue(HoverBackgroundDP); set => SetValue(HoverBackgroundDP, value); }
+        public static readonly DependencyProperty MouseOverBackgroundDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(MouseOverBackground), "#FFDCECFC".ToBrush());
+        public Brush MouseOverBackground { get => (Brush)GetValue(MouseOverBackgroundDP); set => SetValue(MouseOverBackgroundDP, value); }
 
         public static readonly DependencyProperty PressedBackgroundDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(PressedBackground), "#FFDAECFC".ToBrush());
         public Brush PressedBackground { get => (Brush)GetValue(PressedBackgroundDP); set => SetValue(PressedBackgroundDP, value); }
@@ -21,8 +30,8 @@ namespace WPFTemplate.Controls
         #endregion
 
         #region Border
-        public static readonly DependencyProperty HoverBorderBrushDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(HoverBorderBrush), "#FF7Eb4EA".ToBrush());
-        public Brush HoverBorderBrush { get => (Brush)GetValue(HoverBorderBrushDP); set => SetValue(HoverBorderBrushDP, value); }
+        public static readonly DependencyProperty MouseOverBorderBrushDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(MouseOverBorderBrush), "#FF7Eb4EA".ToBrush());
+        public Brush MouseOverBorderBrush { get => (Brush)GetValue(MouseOverBorderBrushDP); set => SetValue(MouseOverBorderBrushDP, value); }
 
         public static readonly DependencyProperty PressedBorderBrushDP = DependencyExt.RegisterDependencyProperty<Slider, Brush>(nameof(PressedBorderBrush), "#FF569DE5".ToBrush());
         public Brush PressedBorderBrush { get => (Brush)GetValue(PressedBorderBrushDP); set => SetValue(PressedBorderBrushDP, value); }
