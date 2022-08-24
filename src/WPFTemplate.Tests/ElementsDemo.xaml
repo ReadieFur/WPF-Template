@@ -106,6 +106,21 @@
                 <templateControls:ComboBoxItem Content="Item 2"/>
             </ComboBox.Items>
         </templateControls:ComboBox>
+        <templateControls:Expander Header="Expander"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Foreground="{Binding foreground, ElementName=Styles}"
+            StaticCircleFill="{Binding backgroundAlt, ElementName=Styles}"
+            StaticCircleStroke="{Binding accent, ElementName=Styles}"
+            StaticArrowStroke="{Binding accent, ElementName=Styles}"
+            MouseOverCircleFill="{Binding background, ElementName=Styles}"
+            MouseOverCircleStroke="{Binding accent, ElementName=Styles}"
+            MouseOverArrowStroke="{Binding accent, ElementName=Styles}"
+            PressedCircleFill="{Binding accent, ElementName=Styles}"
+            PressedCircleStroke="{Binding accent, ElementName=Styles}"
+            PressedArrowStroke="{Binding foreground, ElementName=Styles}">
+            <Label Content="Label" Foreground="{Binding foreground, ElementName=Styles}"/>
+        </templateControls:Expander>
         <!--<templateControls:ListView HorizontalAlignment="Left" Height="81.08" Margin="0,105.92,0,0" VerticalAlignment="Top" Width="240">
             <templateControls:ListView.View>
                 <GridView>
