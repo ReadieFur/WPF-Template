@@ -20,6 +20,15 @@ namespace WPFTemplate.Styles
         private static bool _darkTheme = true;
         private static bool _useSystemTheme = true;
 
+        public static double updateTimerInterval
+        {
+            get => updateTimer.Interval;
+            set
+            {
+                if (value < 1 || value > int.MaxValue) return;
+                updateTimer.Interval = value;
+            }
+        }
         public static SolidColorBrush darkThemeBackground
         {
             get => _darkThemeBackground;
