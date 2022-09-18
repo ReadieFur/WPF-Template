@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTemplate.Tests", "WPFTem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFTemplate", "WPFTemplate\WPFTemplate.csproj", "{170F0BC8-8954-42BA-9C17-BD8791FADD12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTemplate.Tests.Framework", "WPFTemplate.Tests.Framework\WPFTemplate.Tests.Framework.csproj", "{6C06138E-922D-407C-9108-E73BD7CD12BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{170F0BC8-8954-42BA-9C17-BD8791FADD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{170F0BC8-8954-42BA-9C17-BD8791FADD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{170F0BC8-8954-42BA-9C17-BD8791FADD12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C06138E-922D-407C-9108-E73BD7CD12BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C06138E-922D-407C-9108-E73BD7CD12BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C06138E-922D-407C-9108-E73BD7CD12BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C06138E-922D-407C-9108-E73BD7CD12BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

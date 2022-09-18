@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:WPFTemplate.Controls">
     <Style x:Key="ListBox" TargetType="{x:Type local:ListBox}">
-        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:ListBox}}, Path=StaticBackground}"/>
-        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:ListBox}}, Path=StaticBorderBrush}"/>
+        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:ListBox}}, Path=Background}"/>
+        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:ListBox}}, Path=BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>

@@ -7,12 +7,11 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using WPFTemplate.Attributes;
 using WPFTemplate.Extensions;
-using WPFTemplate.Interfaces;
 using Shell = System.Windows.Shell;
 
 namespace WPFTemplate.Controls
 {
-    public class WindowChrome : WindowBase, IVerifyControlTemplate
+    public class WindowChrome : WindowBase
     {
         #region Resources (static)
         public static readonly ResourceDictionary RESOURCES = ResourceDictionaryExt.LoadControlResourceDictionary<WindowChrome>();
@@ -46,14 +45,14 @@ namespace WPFTemplate.Controls
         #endregion
 
         #region Template properties
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Grid root { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Border windowBorder { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Grid headerBar { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerLeft { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerRight { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button minimiseButton { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button resizeButton { get; private set; }
-        [InfoAttribute(IVerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button closeButton { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Grid root { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Border windowBorder { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected Grid headerBar { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerLeft { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected StackPanel headerRight { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button minimiseButton { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button resizeButton { get; private set; }
+        [InfoAttribute(VerifyControlTemplate.TEMPLATE_ATTRIBUTE)] protected System.Windows.Controls.Button closeButton { get; private set; }
         #endregion
 
         #region Obsolete properties
@@ -96,9 +95,19 @@ namespace WPFTemplate.Controls
         #endregion
 
         protected WindowState previousWindowState;
-        protected Shell.WindowChrome windowChrome { get; private init; } = new();
+        protected Shell.WindowChrome windowChrome
+        {
+            get;
+#if NET6_0
+            private init;
+#elif NET48
+            private set;
+#endif
+        } = new();
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public WindowChrome()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             Foreground = "#000000".ToBrush();
             Background = "#ffffff".ToBrush();
@@ -115,7 +124,7 @@ namespace WPFTemplate.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            bool templateIsValid = ((IVerifyControlTemplate)this).VerifyTemplate(this);
+            bool templateIsValid = VerifyControlTemplate.VerifyTemplate(this);
             if (!IsLoaded || !templateIsValid) return;
             OnValidTemplateApplied();
         }
@@ -153,10 +162,12 @@ namespace WPFTemplate.Controls
             {
                 case WindowState.Normal:
                     root.Margin = new(0);
+                    resizeButton.Content = "\uE922";
                     windowBorder.Visibility = Visibility.Visible;
                     break;
                 case WindowState.Maximized:
                     root.Margin = new(0, SystemParametersExt.instance.ResizeFrameVerticalBorderWidth + 1, 0, 0);
+                    resizeButton.Content = "\uE923";
                     windowBorder.Visibility = Visibility.Hidden;
                     break;
             }

@@ -6,7 +6,8 @@ namespace WPFTemplate.Extensions
 {
     public static class DependencyExt
     {
-        public static DependencyProperty RegisterDependencyProperty<TOwner, TValue>(string name, TValue defaultValue) where TOwner : DependencyObject
+        public static DependencyProperty RegisterDependencyProperty<TOwner, TValue>(string name, TValue defaultValue,
+            PropertyChangedCallback? propertyChangedCallback = null) where TOwner : DependencyObject
         {
             //Verify that the target property exists on the owner and has the specified type.
             PropertyInfo? target = typeof(TOwner).GetProperty(name, BindingFlags.Instance | BindingFlags.DeclaredOnly
@@ -17,7 +18,7 @@ namespace WPFTemplate.Extensions
             else if (target.PropertyType != typeof(TValue))
                 throw new ArgumentException($"The type of property {name} does not match the specified type {typeof(TValue).Name}.");
 
-            return DependencyProperty.Register(name, typeof(TValue), typeof(TOwner), new PropertyMetadata(defaultValue));
+            return DependencyProperty.Register(name, typeof(TValue), typeof(TOwner), new PropertyMetadata(defaultValue, propertyChangedCallback));
         }
 
         public static void SetDependencyPropertyValue<T>(this DependencyObject self, DependencyProperty dependencyProperty, T value) =>

@@ -8,7 +8,15 @@ namespace WPFTemplate.Controls
     {
         private Rect _restoreBounds = new(0, 0, 800, 450);
 
-        public IntPtr handle { get; private init; }
+        public IntPtr handle
+        {
+            get;
+#if NET6_0
+            private init;
+#elif NET48
+            private set;
+#endif
+        }
 
         new public bool IsLoaded { get; protected set; } = false;
         new public double MinWidth

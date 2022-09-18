@@ -5,16 +5,17 @@ using System.Reflection;
 using System.Windows.Controls;
 using WPFTemplate.Attributes;
 using WPFTemplate.Controls;
+using WPFTemplate.Extensions;
 
-namespace WPFTemplate.Interfaces
+namespace WPFTemplate
 {
-    public interface IVerifyControlTemplate
+    public static class VerifyControlTemplate
     {
         public const string TEMPLATE_ATTRIBUTE = "templateProperty";
         /// <summary>
         /// Properties to update on the class must be decorated with 'InfoAttribute("templateProperty")' and defined on the template.
         /// </summary>
-        public virtual bool VerifyTemplate(ContentControl self, bool throwIfInvalid = true)
+        public static bool VerifyTemplate(ContentControl self, bool throwIfInvalid = true)
         {
             //Wait for the initial render to complete before checking template updates.
             if (!self.IsLoaded) return true;
@@ -37,7 +38,7 @@ namespace WPFTemplate.Interfaces
                         $"The new template is missing the property '{propertyInfo.Name}'");
                     else return false;
                 }
-                if (!element.GetType().IsAssignableTo(propertyInfo.PropertyType))
+                if (!TypeExt.IsAssignableTo(element.GetType(), propertyInfo.PropertyType))
                 {
                     if (throwIfInvalid) throw new Exception(
                         $"The element for the property '{propertyInfo.Name}' must derrive from '{propertyInfo.PropertyType}'");
