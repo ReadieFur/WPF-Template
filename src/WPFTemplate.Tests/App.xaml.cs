@@ -10,7 +10,7 @@ namespace WPFTemplate.Tests
     {
         private async void Application_Startup(object sender, StartupEventArgs e)
         {
-#if DEBUG && true
+#if DEBUG && false
             #region Testing
             //new DataBinding().ShowDialog();
             //new TypeConversion().ShowDialog();
@@ -18,7 +18,7 @@ namespace WPFTemplate.Tests
             //SystemFontsExt.GetSystemParametersInfo();
             //new Window1().ShowDialog();
             //new ElementsBase().ShowDialog();
-            //new Window2().ShowDialog();
+            new Window2().ShowDialog();
 
             /*await Task.WhenAny(
                 new ElementsBase().ShowAsync(),

@@ -143,5 +143,13 @@
             </templateControls:ListView.View>
             <templateControls:ListViewItem Content="Item1"/>
         </templateControls:ListView>-->
+        <templateControls:PasswordBox Margin="{StaticResource ItemMargin}"
+            Background="{Binding backgroundAlt, ElementName=Styles}"
+            BorderBrush="{Binding background, ElementName=Styles}"
+            Foreground="{Binding foreground, ElementName=Styles}"
+            MouseOverBorderBrush="{Binding accent, ElementName=Styles}"
+            FocusBorderBrush="{Binding accent, ElementName=Styles}"
+            SelectionBrush="{Binding accent, ElementName=Styles}"
+            CaretBrush="{Binding foreground, ElementName=Styles}"/>
     </StackPanel>
 </templateControls:WindowBase>

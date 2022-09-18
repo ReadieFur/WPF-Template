@@ -7,18 +7,9 @@
         xmlns:templateControls="clr-namespace:WPFTemplate.Controls;assembly=WPFTemplate"
         mc:Ignorable="d"
         Title="Window2" Height="300" Width="400">
-    <ListBox x:Name="lb">
-        <ListBoxItem x:Name="lbi">
-            <templateControls:Expander x:Name="exp" IsExpanded="True">
-                <Grid Height="50">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" Background="Red"/>
-                    <Grid Grid.Column="1" Background="Green"/>
-                </Grid>
-            </templateControls:Expander>
-        </ListBoxItem>
-    </ListBox>
+    <Grid>
+        <Border Width="100" Height="20" BorderBrush="Red">
+            <PasswordBox Password="password" Background="{x:Null}"/>
+        </Border>
+    </Grid>
 </Window>
