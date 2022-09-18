@@ -27,6 +27,36 @@ namespace WPFTemplate.Controls
         public static readonly DependencyProperty PasswordProperty =
           DependencyProperty.Register(
             "Password", typeof(SecureString), typeof(PasswordBox), new UIPropertyMetadata(new SecureString()));
+        /// <summary>
+        ///   Gets or sets dependency Property implementation for Password
+        /// </summary>
+        private SecureString securePassword
+        {
+            get => (SecureString)GetValue(PasswordProperty);
+            set => SetValue(PasswordProperty, value);
+        }
+        public SecureString SecurePassword => (SecureString)GetValue(PasswordProperty);
+        public string Password
+        {
+            get
+            {
+                IntPtr valuePtr = IntPtr.Zero;
+                try
+                {
+                    valuePtr = System.Runtime.InteropServices.Marshal.SecureStringToBSTR(securePassword);
+                    return System.Runtime.InteropServices.Marshal.PtrToStringBSTR(valuePtr);
+                }
+                finally
+                {
+                    System.Runtime.InteropServices.Marshal.ZeroFreeBSTR(valuePtr);
+                }
+            }
+            set
+            {
+                securePassword = new();
+                AddToSecureString(value);
+            }
+        }
 
         /// <summary>
         ///   Private member holding mask visibile timer
@@ -45,17 +75,6 @@ namespace WPFTemplate.Controls
             CommandManager.AddPreviewExecutedHandler(this, PreviewExecutedHandler);
             _maskTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 1) };
             _maskTimer.Tick += (sender, args) => MaskAllDisplayText();
-        }
-        #endregion
-
-        #region Commands & Properties
-        /// <summary>
-        ///   Gets or sets dependency Property implementation for Password
-        /// </summary>
-        public SecureString Password
-        {
-            get => (SecureString)GetValue(PasswordProperty);
-            set => SetValue(PasswordProperty, value);
         }
         #endregion
 
@@ -127,7 +146,7 @@ namespace WPFTemplate.Controls
             foreach (char c in text)
             {
                 int caretIndex = CaretIndex;
-                Password.InsertAt(caretIndex, c);
+                securePassword.InsertAt(caretIndex, c);
                 MaskAllDisplayText();
                 if (caretIndex == base.Text.Length)
                 {
@@ -148,7 +167,7 @@ namespace WPFTemplate.Controls
         private void RemoveFromSecureString(int startIndex, int trimLength)
         {
             int caretIndex = CaretIndex;
-            for (int i = 0; i < trimLength; ++i) Password.RemoveAt(startIndex);
+            for (int i = 0; i < trimLength; ++i) securePassword.RemoveAt(startIndex);
             
             base.Text = base.Text.Remove(startIndex, trimLength);
             CaretIndex = caretIndex;
